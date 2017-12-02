@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wikipedia popular events</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bookblock.css"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="wrapper">
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Seasonal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trends</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboards</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input id="searchItems" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <div id="menu" class="fixed-pos" style="display: block; opacity: 1; left: 0px;">
+                <div id="menu-items-wrap">
+                    <div id="menu-header" class="menu-item" style="align-self: flex-start">
+                        <img id="small-logo-top-left" src="images/logo-menu.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <div class="header-image">
+        <img src="images/Wikipedia_mini_globe_handheld.jpg">
+    </div>
+    <div class="animation">
+        <div class="yellow-background">
+            <img class="yellow-src" src="images/yellow-bg-large.png" width="5000" height="4175">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-5 totop articles">
+
+        </div>
+    </div>
+</div>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/loadArticle.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+</body>
+
+</html>

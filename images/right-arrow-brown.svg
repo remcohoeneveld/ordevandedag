@@ -1,0 +1,19 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<g id="bg">
+	<rect style="fill:#d6d5c7;" width="300" height="300"/>
+</g>
+<g id="arrow">
+	<g>
+		<g>
+            <rect x="152" y="55.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -33.7466 146.525)" style="fill:#343b56;" width="16" height="117.8"/>
+			<path style="fill:#343b56;" d="M124,67.4l82.6,82.6L196,160.6L113.4,78L124,67.4 M124,66l-12,12l84,84l12-12L124,66L124,66z"/>
+		</g>
+		<g>
+
+            <rect x="101.1" y="178" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -84.6575 167.6131)" style="fill:#343b56;" width="117.8" height="16"/>
+			<path style="fill:#343b56;" d="M196,139.4l10.6,10.6L124,232.6L113.4,222L196,139.4 M196,138l-84,84l12,12l84-84L196,138L196,138z"/>
+		</g>
+	</g>
+</g>
+</svg>
