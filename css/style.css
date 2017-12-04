@@ -483,11 +483,11 @@ a:hover {
 }
 
 .active .yellow-line {
-    background: rgb(255, 255, 14) !important;
+    background: rgb(52, 59, 86) !important;
 }
 
 .yellow-line {
-    background: rgb(183, 182, 170);
+    background: rgb(158, 162, 181);
 }
 
 .button-nav {
