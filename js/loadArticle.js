@@ -4,6 +4,7 @@ $.getJSON("dummyContent.json", function (json) {
         appendJsonToMenu(json['items'][item], item);
         scrollActiveMenu(json['items'][item]);
         getDetailJson(json['items'][item], item);
+        getDetailJsonExtra(json['items'][item], item);
         searchArticle(item);
     }
 });
@@ -12,16 +13,20 @@ function appendJsonToContent(item, number) {
     var wrapper = $(".articles");
     wrapper.append("<div class=\"panel-article card\" id=" + item['pageid'] + " ></div>");
     var articleContainer = $("#" + item['pageid']);
+
     articleContainer.append("<div class=\"front\" id=" + "first" + number + "></div>");
     articleContainer.append("<div class=\"back\" id=" + "second" + number + "></div>");
+    articleContainer.append("<div class=\"side\" id=" + "third" + number + "></div>");
 
     var articleContent = $("#first" + number);
-
     var articleContentSecond = $("#second" + number);
-    //
-    // articleContentSecond.hide();
+    var articleContentThird = $("#third" + number);
+
     articleContent.append("<button type=\"button\" class=\"btn btn-primary\" id='details" + number + "'><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></button>");
     articleContentSecond.append("<button type=\"button\" class=\"btn btn-primary\" id='prev" + number + "'><i class=\"fa fa-minus-square-o\" aria-hidden=\"true\"></i></button>");
+
+    articleContentSecond.hide();
+    articleContentThird.hide();
 
     articleContent.append("<h1 class=\"article-head\">" + item['title'] + "</h1>");
     articleContent.append("<p class=\"article-text\">" + item['extract'] + "</p>");
@@ -29,10 +34,23 @@ function appendJsonToContent(item, number) {
 
     $('#details' + number).click(function () {
         articleContainer.toggleClass('flipped');
+
+        articleContent.fadeToggle("slow");
+        articleContentSecond.fadeIn("slow");
+        articleContentThird.fadeIn("slow");
+
+        $('#' + item['pageid']).animate({height: "1000px"}, 1000);
+
     });
 
     $('#prev' + number).click(function () {
         articleContainer.toggleClass('flipped');
+
+        articleContent.fadeToggle(1000);
+        articleContentSecond.fadeOut("slow");
+        articleContentThird.fadeOut("slow");
+
+        $('#' + item['pageid']).animate({height: "350px"}, 1000);
     });
 
 }
@@ -78,7 +96,7 @@ function getDetailJson(item, number) {
                 var pageviews = jsonData.pageviews;
                 var views = [];
                 var viewlabels = [];
-                for (var view in pageviews){
+                for (var view in pageviews) {
                     views.push(pageviews[view]);
                     viewlabels.push(view);
                 }
@@ -91,10 +109,10 @@ function getDetailJson(item, number) {
                     data: {
                         labels: viewlabels,
                         datasets: [{
-                            label: pagechartname ,
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'rgb(255, 99, 132)',
-                            data: views,
+                            label: pagechartname,
+                            backgroundColor: 'rgb(158, 162, 181)',
+                            borderColor: 'rgb(52, 59, 86)',
+                            data: views
                         }]
                     },
 
@@ -109,7 +127,54 @@ function getDetailJson(item, number) {
     });
 }
 
-var distance = $('#sidebar-wrapper').offset().top - 50,
+function getDetailJsonExtra(item, number) {
+    $.ajax({
+        url: 'https://nl.wikipedia.org/w/api.php',
+        data: {action: 'query', titles: item['title'], format: 'json', prop: 'contributors', rvprop: 'content'},
+        dataType: 'jsonp',
+        success: function (x) {
+            var articleContent = $("#third" + number);
+            if (x !== null) {
+                jsonData = x.query.pages[item['pageid']];
+                articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
+                articleContent.append("<canvas id=articlecontributors-" + jsonData.pageid + "></canvas>");
+
+                var pagechartname = jsonData.title + " contributors";
+                var contributors = jsonData.contributors;
+                var userid = [];
+                var name = [];
+
+                for (var contrib in contributors) {
+                    name.push(contributors[contrib].name);
+                    userid.push(contributors[contrib].userid);
+                }
+                new Chart($("#articlecontributors-" + jsonData.pageid)[0].getContext('2d'), {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: name,
+                        datasets: [{
+                            label: pagechartname,
+                            backgroundColor: 'rgb(158, 162, 181)',
+                            borderColor: 'rgb(52, 59, 86)',
+                            data: userid
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {}
+                });
+            }
+        },
+        error: function () {
+            console.log('not found')
+        }
+    });
+}
+
+var distance = $('#sidebar-wrapper').offset().top,
     $window = $(window);
 
 $window.scroll(function () {
