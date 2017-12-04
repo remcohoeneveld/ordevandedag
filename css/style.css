@@ -406,7 +406,6 @@ a:hover {
   border-right: 0;
   border-bottom: solid 1px #343b56;
   width: 100%;
-  height: 350px;
   -webkit-transition: -webkit-transform 2s;
   -moz-transition: -moz-transform 2s;
   -o-transition: -o-transform 2s;
@@ -443,7 +442,14 @@ a:hover {
 .card .side {
   background: white;
   padding: 20px;
-  border-bottom: solid 4px;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.card .sid {
+  background: white;
+  padding: 20px;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -498,10 +504,12 @@ h1 {
     font-size: 13px;
     line-height: 15px; }
   .maincontent {
-    margin-left: 5px; } }
+    margin-left: 5px; }
+  #hide-sidebar {
+    display: none; } }
 
 .aspect-ratio {
-  height: 400px !important; }
+  height: 300px !important; }
 
 .margin-right {
   margin-right: 20px; }
@@ -514,3 +522,24 @@ h1 {
       background-color: #343b56; }
       .dropdown-menu li:hover a {
         color: white; }
+
+.hide {
+  width: 0 !important;
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -o-transition: -o-transform 2s;
+  transition: transform 2s; }
+
+.margin-left {
+  margin-left: -15px;
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -o-transition: -o-transform 2s;
+  transition: transform 2s; }
+
+.height {
+  height: 1100px;
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -o-transition: -o-transform 2s;
+  transition: transform 2s; }

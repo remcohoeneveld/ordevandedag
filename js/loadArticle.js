@@ -1,22 +1,35 @@
-$.getJSON("dummyContent.json", function (json) {
-    for (item in json['items']) {
-        appendJsonToContent(json['items'][item], item);
-        appendJsonToMenu(json['items'][item], item);
-        scrollActiveMenu(json['items'][item]);
-        getDetailJson(json['items'][item], item);
-        getDetailJsonExtra(json['items'][item], item);
-        searchArticle(item);
+$.getJSON("https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/pre-ordevandedag/document/_search", function (json) {
+    for (hits in json['hits']['hits']) {
+        //creating all the content
+        appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
+        //creating the sidebar menu
+        appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
+        //creating the active status on the sidebar menu
+        scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
+        // creating the detail page for the content [views]
+        getDetailJson(json['hits']['hits'][hits]['_source'], hits);
+        // creating the detail page for the content [contributors]
+        getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
+
+        //getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
+
+
+        // searching an article
+        searchArticle(hits);
+        // hiding the sidebar
+        hideSidebar();
     }
 });
 
 function appendJsonToContent(item, number) {
     var wrapper = $(".articles");
-    wrapper.append("<div class=\"panel-article card\" id=" + item['pageid'] + " ></div>");
-    var articleContainer = $("#" + item['pageid']);
+    wrapper.append("<div class=\"panel-article card\" id=" + item['page_id'] + " ></div>");
+    var articleContainer = $("#" + item['page_id']);
 
     articleContainer.append("<div class=\"front\" id=" + "first" + number + "></div>");
     articleContainer.append("<div class=\"back\" id=" + "second" + number + "></div>");
     articleContainer.append("<div class=\"side\" id=" + "third" + number + "></div>");
+    //articleContainer.append("<div class=\"sid\" id=" + "fourth" + number + "></div>");
 
     var articleContent = $("#first" + number);
     var articleContentSecond = $("#second" + number);
@@ -28,8 +41,9 @@ function appendJsonToContent(item, number) {
     articleContentSecond.hide();
     articleContentThird.hide();
 
-    articleContent.append("<h1 class=\"article-head\">" + item['title'] + "</h1>");
+    articleContent.append("<h1 class=\"article-head\">" + item['clean_title'] + "</h1>");
     articleContent.append("<p class=\"article-text\">" + item['extract'] + "</p>");
+    articleContent.append("<a href=https://nl.wikipedia.org/wiki/"+ item['title'] +"><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View on wikipedia</button></a>");
 
 
     $('#details' + number).click(function () {
@@ -39,7 +53,7 @@ function appendJsonToContent(item, number) {
         articleContentSecond.fadeIn("slow");
         articleContentThird.fadeIn("slow");
 
-        $('#' + item['pageid']).animate({height: "1100px"}, 1000);
+        $('#' + item['page_id']).addClass('height')
 
     });
 
@@ -50,7 +64,7 @@ function appendJsonToContent(item, number) {
         articleContentSecond.fadeOut("slow");
         articleContentThird.fadeOut("slow");
 
-        $('#' + item['pageid']).animate({height: "350px"}, 1000);
+        $('#' + item['page_id']).removeClass('height')
     });
 
 }
@@ -58,30 +72,37 @@ function appendJsonToContent(item, number) {
 function appendJsonToMenu(item, number) {
     number++;
     var wrapper = $("#menu-items-wrap");
-    wrapper.append("<div class=\"menu-item chapter-item\"><div class=\"heading-wrap\" id=\"menu-" + item['pageid'] + "\" data-link=\"heading-one-anim\"></div></div>");
-    var menuItem = $("#menu-" + item['pageid']);
+    wrapper.append("<div class=\"menu-item chapter-item\"><div class=\"heading-wrap\" id=\"menu-" + item['page_id'] + "\" data-link=\"heading-one-anim\"></div></div>");
+    var menuItem = $("#menu-" + item['page_id']);
     menuItem.append("<div class=\"chapter-num\">0" + number + "&nbsp;</div>");
-    menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['pageid'] + "\">" + item['title'] + "</a></div>");
+    menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></div>");
     menuItem.append("<div class=\"yellow-line\"></div>");
 
     var mobileListItem = $('.dropdown-menu');
-    mobileListItem.append("<li><a href=\"#" + item['pageid'] + "\">" + item['title'] + "</a></li>");
+    mobileListItem.append("<li><a href=\"#" + item['page_id'] + "\">" + item['title'] + "</a></li>");
 }
 
 
 function scrollActiveMenu(item) {
     $(window).on('scroll', function () {
-        $("#" + item['pageid']).each(function () {
+        $("#" + item['page_id']).each(function () {
             var visible = $(this).visible();
             if (visible) {
-                $("#menu-" + item['pageid']).addClass('active')
+                $("#menu-" + item['page_id']).addClass('active')
             } else {
-                $("#menu-" + item['pageid']).removeClass('active')
+                $("#menu-" + item['page_id']).removeClass('active')
             }
         });
     });
 }
 
+
+function hideSidebar() {
+    $('#hide-sidebar').click(function () {
+        $('#sidebar-wrapper').toggleClass("hide");
+        $('.maincontent').toggleClass("margin-left")
+    });
+}
 
 function getDetailJson(item, number) {
     $.ajax({
@@ -91,9 +112,10 @@ function getDetailJson(item, number) {
         success: function (x) {
             var articleContent = $("#second" + number);
             if (x !== null) {
-                jsonData = x.query.pages[item['pageid']];
+                jsonData = x.query.pages[item['page_id']];
                 articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
                 articleContent.append("<div class='aspect-ratio'><canvas id=article-" + jsonData.pageid + "></canvas></div>");
+                articleContent.append("<a href="+ item['view_url'] +"><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View data</button></a>");
                 var pagechartname = jsonData.title;
                 var pageviews = jsonData.pageviews;
                 var views = [];
@@ -119,7 +141,7 @@ function getDetailJson(item, number) {
                     },
 
                     // Configuration options go here
-                    options: { responsive:true, maintainAspectRatio: false }
+                    options: {responsive: true, maintainAspectRatio: false}
                 });
             }
         },
@@ -137,7 +159,7 @@ function getDetailJsonExtra(item, number) {
         success: function (x) {
             var articleContent = $("#third" + number);
             if (x !== null) {
-                jsonData = x.query.pages[item['pageid']];
+                jsonData = x.query.pages[item['page_id']];
                 articleContent.append("<div class='aspect-ratio'><canvas id=articlecontributors-" + jsonData.pageid + "></canvas></div>");
                 var pagechartname = jsonData.title + " contributors";
                 var contributors = jsonData.contributors;
@@ -164,7 +186,49 @@ function getDetailJsonExtra(item, number) {
                     },
 
                     // Configuration options go here
-                    options: { responsive:true, maintainAspectRatio: false }
+                    options: {responsive: true, maintainAspectRatio: false}
+                });
+            }
+        },
+        error: function () {
+            console.log('not found')
+        }
+    });
+}
+
+function getDetailJsonDay(item, number) {
+    $.ajax({
+        url: item['view_url'],
+        success: function (x) {
+            var articleContent = $("#fourth" + number);
+            if (x !== null) {
+                jsonData = x.items;
+                var views = [];
+                var labels = [];
+                for (var i = 0; i < jsonData.length; i++) {
+                    views.push(jsonData[i]['views']);
+                    labels.push(jsonData[i]['timestamp']);
+                }
+                articleContent.append("<div class='aspect-ratio'><canvas id=articleviews-" + item['page_id'] + "></canvas></div>");
+                var pagechartname = item['clean_title'] + " detailed views";
+
+                new Chart($("#articleviews-" + item['page_id'])[0].getContext('2d'), {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: pagechartname,
+                            backgroundColor: 'rgb(158, 162, 200)',
+                            borderColor: 'rgb(52, 59, 86)',
+                            data: views
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {responsive: true, maintainAspectRatio: false}
                 });
             }
         },
