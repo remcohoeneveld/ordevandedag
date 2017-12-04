@@ -52,7 +52,6 @@ function scrollActiveMenu(item) {
     $(window).on('scroll', function () {
         $("#" + item['pageid']).each(function () {
             var visible = $(this).visible();
-            console.log(visible);
             if (visible) {
                 $("#menu-" + item['pageid']).addClass('active')
             } else {
@@ -66,14 +65,42 @@ function scrollActiveMenu(item) {
 function getDetailJson(item, number) {
     $.ajax({
         url: 'https://nl.wikipedia.org/w/api.php',
-        data: {action: 'query', titles: item['title'], format: 'json', prob: 'revisions', rvprop: 'content'},
+        data: {action: 'query', titles: item['title'], format: 'json', prop: 'pageviews', rvprop: 'content'},
         dataType: 'jsonp',
         success: function (x) {
             var articleContent = $("#second" + number);
             if (x !== null) {
                 jsonData = x.query.pages[item['pageid']];
                 articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
-                articleContent.append("<p class=\"article-text\">" + JSON.stringify(jsonData) + "</p>");
+                articleContent.append("<canvas id=article-" + jsonData.pageid + "></canvas>");
+
+                var pagechartname = jsonData.title;
+                var pageviews = jsonData.pageviews;
+                var views = [];
+                var viewlabels = [];
+                for (var view in pageviews){
+                    views.push(pageviews[view]);
+                    viewlabels.push(view);
+                }
+
+                new Chart($("#article-" + jsonData.pageid)[0].getContext('2d'), {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: viewlabels,
+                        datasets: [{
+                            label: pagechartname ,
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: views,
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {}
+                });
             }
         },
         error: function () {
@@ -87,20 +114,17 @@ var distance = $('#sidebar-wrapper').offset().top - 50,
 
 $window.scroll(function () {
     if ($window.scrollTop() >= distance) {
-
-        $('#sidebar-wrapper').addClass('top-class')
-        // Your div has reached the top
+        $('#sidebar-wrapper').addClass('top-class');
     } else {
-        $('#sidebar-wrapper').removeClass('top-class')
+        $('#sidebar-wrapper').removeClass('top-class');
     }
+
 });
 
 function searchArticle(number) {
     $("#searchItems").keyup(function () {
         var input = this.value;
-        console.log(input);
         var div = $("#first" + number);
-
         // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < div.length; i++) {
             var h1 = div[i].getElementsByTagName("h1")[0];

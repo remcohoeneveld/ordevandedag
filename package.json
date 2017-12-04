@@ -1,8 +1,8 @@
 {
-  "title": "Simple Sidebar",
-  "name": "startbootstrap-simple-sidebar",
-  "version": "4.0.0-beta.2",
-  "description": "A simple sidbar navigation HTMl template built with Bootstrap",
+  "title": "Orde van de dag",
+  "name": "orde-van-de-dag",
+  "version": "1.0.0",
+  "description": "A simple bootstrap application",
   "keywords": [
     "css",
     "sass",
@@ -11,22 +11,20 @@
     "theme",
     "template"
   ],
-  "homepage": "https://startbootstrap.com/template-overviews/simple-sidebar",
+  "homepage": "https://github.com/remcohoeneveld/ordevandedag",
   "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/issues",
-    "email": "feedback@startbootstrap.com"
+    "url": "https://github.com/remcohoeneveld/ordevandedag/issues",
+    "email": "remcohoeneveld@gmail.com"
   },
-  "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
+  "license": "RMC",
+  "author": "remcohoeneveld",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-simple-sidebar.git"
+    "url": "https://github.com/remcohoeneveld/ordevandedag"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
+    "chart.js": "^2.7.1",
     "jquery": "^3.2.1"
   },
   "devDependencies": {
