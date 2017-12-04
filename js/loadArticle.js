@@ -39,7 +39,7 @@ function appendJsonToContent(item, number) {
         articleContentSecond.fadeIn("slow");
         articleContentThird.fadeIn("slow");
 
-        $('#' + item['pageid']).animate({height: "1000px"}, 1000);
+        $('#' + item['pageid']).animate({height: "1100px"}, 1000);
 
     });
 
@@ -63,6 +63,9 @@ function appendJsonToMenu(item, number) {
     menuItem.append("<div class=\"chapter-num\">0" + number + "&nbsp;</div>");
     menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['pageid'] + "\">" + item['title'] + "</a></div>");
     menuItem.append("<div class=\"yellow-line\"></div>");
+
+    var mobileListItem = $('.dropdown-menu');
+    mobileListItem.append("<li><a href=\"#" + item['pageid'] + "\">" + item['title'] + "</a></li>");
 }
 
 
@@ -76,8 +79,8 @@ function scrollActiveMenu(item) {
                 $("#menu-" + item['pageid']).removeClass('active')
             }
         });
-    })
-};
+    });
+}
 
 
 function getDetailJson(item, number) {
@@ -90,8 +93,7 @@ function getDetailJson(item, number) {
             if (x !== null) {
                 jsonData = x.query.pages[item['pageid']];
                 articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
-                articleContent.append("<canvas id=article-" + jsonData.pageid + "></canvas>");
-
+                articleContent.append("<div class='aspect-ratio'><canvas id=article-" + jsonData.pageid + "></canvas></div>");
                 var pagechartname = jsonData.title;
                 var pageviews = jsonData.pageviews;
                 var views = [];
@@ -117,7 +119,7 @@ function getDetailJson(item, number) {
                     },
 
                     // Configuration options go here
-                    options: {}
+                    options: { responsive:true, maintainAspectRatio: false }
                 });
             }
         },
@@ -136,9 +138,7 @@ function getDetailJsonExtra(item, number) {
             var articleContent = $("#third" + number);
             if (x !== null) {
                 jsonData = x.query.pages[item['pageid']];
-                articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
-                articleContent.append("<canvas id=articlecontributors-" + jsonData.pageid + "></canvas>");
-
+                articleContent.append("<div class='aspect-ratio'><canvas id=articlecontributors-" + jsonData.pageid + "></canvas></div>");
                 var pagechartname = jsonData.title + " contributors";
                 var contributors = jsonData.contributors;
                 var userid = [];
@@ -157,14 +157,14 @@ function getDetailJsonExtra(item, number) {
                         labels: name,
                         datasets: [{
                             label: pagechartname,
-                            backgroundColor: 'rgb(158, 162, 181)',
+                            backgroundColor: 'rgb(158, 162, 200)',
                             borderColor: 'rgb(52, 59, 86)',
                             data: userid
                         }]
                     },
 
                     // Configuration options go here
-                    options: {}
+                    options: { responsive:true, maintainAspectRatio: false }
                 });
             }
         },
@@ -178,7 +178,7 @@ var distance = $('#sidebar-wrapper').offset().top,
     $window = $(window);
 
 $window.scroll(function () {
-    if ($window.scrollTop() >= distance) {
+    if (!$('.navbar').visible()) {
         $('#sidebar-wrapper').addClass('top-class');
     } else {
         $('#sidebar-wrapper').removeClass('top-class');
