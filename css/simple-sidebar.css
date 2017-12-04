@@ -37,7 +37,14 @@ a:hover {
 }
 
 .yellow-src {
+    width:5000px;
+    height: 3175px;
+}
 
+.fixed-pos{
+    display: block;
+    opacity: 1;
+    left: 0px;
 }
 
 #wrapper {

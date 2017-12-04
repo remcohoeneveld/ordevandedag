@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f9f2a43-3764-4427-b8ee-6ab8f16503eb" name="Default" comment="" />
+    <list default="true" id="1f9f2a43-3764-4427-b8ee-6ab8f16503eb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.visible.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.visible.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/searchArticle.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/simple-sidebar.css" afterPath="$PROJECT_DIR$/css/simple-sidebar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loadArticle.js" afterPath="$PROJECT_DIR$/js/loadArticle.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +22,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="38" />
+            <state relative-caret-position="771">
+              <caret line="77" column="50" lean-forward="false" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -24,33 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchArticle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/searchArticle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loadArticle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-              <folding>
-                <marker date="1512210975539" expanded="true" signature="2133:2139" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="simple-sidebar.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/simple-sidebar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8610">
-              <caret line="574" column="16" lean-forward="false" selection-start-line="574" selection-start-column="16" selection-end-line="574" selection-end-column="16" />
+            <state relative-caret-position="547">
+              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -68,8 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>images</find>
-      <find>#sidebar-wrapper</find>
       <find>sidebar-wrapper</find>
       <find>heading</find>
       <find>sidebar-wra</find>
@@ -97,10 +81,16 @@
       <find>@media</find>
       <find>front</find>
       <find>details</find>
+      <find>dashb</find>
+      <find>yellow</find>
+      <find>isIn</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -121,10 +111,10 @@
         <option value="$PROJECT_DIR$/BookBlock/index.html" />
         <option value="$PROJECT_DIR$/js/jquery.appear.js" />
         <option value="$PROJECT_DIR$/js/flip.js" />
-        <option value="$PROJECT_DIR$/css/simple-sidebar.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/searchArticle.js" />
+        <option value="$PROJECT_DIR$/css/simple-sidebar.css" />
         <option value="$PROJECT_DIR$/js/loadArticle.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -177,24 +167,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="whatshappening" type="b2602c69:ProjectViewProjectNode" />
-              <item name="whatshappening" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ordevandedag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ordevandedag" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="whatshappening" type="b2602c69:ProjectViewProjectNode" />
-              <item name="whatshappening" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ordevandedag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ordevandedag" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,18 +196,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/fonts" />
-      <recent name="$PROJECT_DIR$/www.sbs.com.au/aviolentact/flash/chapter-one-hero/images/desktop" />
-      <recent name="$PROJECT_DIR$/www.sbs.com.au/aviolentact/flash/chapter-one-hero/images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\js" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\js" />
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$/www.sbs.com.au/aviolentact/flash/chapter-one-hero/images/desktop" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -256,25 +247,28 @@
       <workItem from="1512054469699" duration="15432000" />
       <workItem from="1512209752016" duration="1326000" />
       <workItem from="1512235702272" duration="121000" />
+      <workItem from="1512237195924" duration="508000" />
+      <workItem from="1512328671528" duration="2319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45784000" />
+    <option name="totallyTimeSpent" value="48611000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15445666" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15778251" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -302,24 +296,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43260">
-          <caret line="2884" column="27181" lean-forward="false" selection-start-line="2884" selection-start-column="27181" selection-end-line="2884" selection-end-column="27181" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/stylesheets/main.css" />
     <entry file="file://$PROJECT_DIR$/css/simple-sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -334,27 +311,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="66" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="198" column="19" lean-forward="false" selection-start-line="198" selection-start-column="19" selection-end-line="198" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="143" column="80" lean-forward="false" selection-start-line="143" selection-start-column="80" selection-end-line="143" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/index.html" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/index.html" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/scripts/app.js" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -367,13 +326,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www.sbs.com.au/getbootstrap.com/docs/4.0/examples/dashboard/index.html" />
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/scripts/app.js" />
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -381,97 +334,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="2884" column="27181" lean-forward="false" selection-start-line="2884" selection-start-column="27181" selection-end-line="2884" selection-end-column="27181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/01ebe944-ca6c-41db-a3ba-b7e2a90536d9.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d30fef5b-e7a0-444c-8fbf-629dbf84f4f8.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d079b7e1-7489-4f6d-b4c9-536742085cff.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/c1b04d06-92b9-4e4c-8a67-533f25856fd8.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/b5a8bf3f-37f2-43c3-ac26-fb03e47642a8.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d14a0bc4-5dcd-48b6-8747-98d111e6ee58.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/829324c5-bffc-40ea-82c5-de2eb1d5a8a0.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/20073de8-56dd-4e4c-9434-5097c3f2fd28.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/8741fba4-5847-45da-858a-a70d6208f327.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/1301d16e-d0ec-407b-9796-677535450691.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/48d599a6-92b5-4d43-a4ac-8959f6971853.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/stylesheets/main.css" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/index.html" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/01ebe944-ca6c-41db-a3ba-b7e2a90536d9.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d30fef5b-e7a0-444c-8fbf-629dbf84f4f8.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d079b7e1-7489-4f6d-b4c9-536742085cff.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/c1b04d06-92b9-4e4c-8a67-533f25856fd8.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/b5a8bf3f-37f2-43c3-ac26-fb03e47642a8.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d14a0bc4-5dcd-48b6-8747-98d111e6ee58.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/829324c5-bffc-40ea-82c5-de2eb1d5a8a0.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/20073de8-56dd-4e4c-9434-5097c3f2fd28.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/8741fba4-5847-45da-858a-a70d6208f327.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/1301d16e-d0ec-407b-9796-677535450691.svg" />
+    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/48d599a6-92b5-4d43-a4ac-8959f6971853.svg" />
     <entry file="file://$PROJECT_DIR$/fonts/b5a8bf3f-37f2-43c3-ac26-fb03e47642a8.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19157">
@@ -498,27 +373,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/smoothscroll.js" />
-    <entry file="file://$PROJECT_DIR$/BookBlock/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4609">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bookblock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookBlock/css/demo4.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BookBlock/index2.html" />
+    <entry file="file://$PROJECT_DIR$/js/bookblock.js" />
+    <entry file="file://$PROJECT_DIR$/BookBlock/css/demo4.css" />
     <entry file="file://$PROJECT_DIR$/css/demo4.css" />
     <entry file="file://$PROJECT_DIR$/js/modernizr.custom.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -527,36 +384,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BookBlock/css/demo5.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="101" column="32" lean-forward="false" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookBlock/index5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BookBlock/css/demo5.css" />
+    <entry file="file://$PROJECT_DIR$/BookBlock/index5.html" />
     <entry file="file://$PROJECT_DIR$/js/jquery.appear.js" />
     <entry file="file://$PROJECT_DIR$/css/demo1.css" />
-    <entry file="file://$PROJECT_DIR$/BookBlock/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookBlock/index4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BookBlock/index.html" />
+    <entry file="file://$PROJECT_DIR$/BookBlock/index4.html" />
     <entry file="file://$PROJECT_DIR$/js/flip.js" />
     <entry file="file://$PROJECT_DIR$/css/bookblock.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -573,22 +406,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/simple-sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8610">
-          <caret line="574" column="16" lean-forward="false" selection-start-line="574" selection-start-column="16" selection-end-line="574" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.bookblock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.bookblock.js" />
     <entry file="file://$PROJECT_DIR$/js/searchArticle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -599,18 +417,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+        <state relative-caret-position="530">
+          <caret line="60" column="11" lean-forward="true" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
           <folding>
-            <marker date="1512210975539" expanded="true" signature="2133:2139" ph=" " />
+            <marker date="1512329930686" expanded="true" signature="1985:1991" ph=" " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-visible-master/examples/demo-basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/simple-sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="38" />
+        <state relative-caret-position="771">
+          <caret line="77" column="50" lean-forward="false" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

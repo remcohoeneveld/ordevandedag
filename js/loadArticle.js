@@ -28,14 +28,10 @@ function appendJsonToContent(item, number) {
 
 
     $('#details' + number).click(function () {
-        // articleContent.hide();
-        // articleContentSecond.show();
         articleContainer.toggleClass('flipped');
     });
 
     $('#prev' + number).click(function () {
-        // articleContent.show();
-        // articleContentSecond.hide();
         articleContainer.toggleClass('flipped');
     });
 
@@ -54,14 +50,10 @@ function appendJsonToMenu(item, number) {
 
 function scrollActiveMenu(item) {
     $(window).on('scroll', function () {
-        var scrollTop = $(this).scrollTop();
-
         $("#" + item['pageid']).each(function () {
-
-
-            var topDistance = $(this).offset().top;
-
-            if ((topDistance + 100) < scrollTop) {
+            var visible = $(this).visible();
+            console.log(visible);
+            if (visible) {
                 $("#menu-" + item['pageid']).addClass('active')
             } else {
                 $("#menu-" + item['pageid']).removeClass('active')
@@ -72,7 +64,6 @@ function scrollActiveMenu(item) {
 
 
 function getDetailJson(item, number) {
-
     $.ajax({
         url: 'https://nl.wikipedia.org/w/api.php',
         data: {action: 'query', titles: item['title'], format: 'json', prob: 'revisions', rvprop: 'content'},
