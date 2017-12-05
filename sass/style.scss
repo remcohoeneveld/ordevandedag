@@ -65,11 +65,11 @@ a:hover {
 }
 
 #sidebar-wrapper {
-  display: none;
+  display: block;
   z-index: 1000;
   position: fixed;
-  left: 250px;
-  width: 0;
+  left: -25px;
+  width: 275px;
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
@@ -80,8 +80,7 @@ a:hover {
 }
 
 #wrapper #sidebar-wrapper.finished {
-  display: block;
-  width: 270px;
+  left: 250px;
 }
 
 .article-text {
@@ -110,7 +109,7 @@ a:hover {
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 270px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -170,10 +169,6 @@ a:hover {
     padding-left: 250px;
   }
 
-  #sidebar-wrapper {
-    width: 0;
-  }
-
   #wrapper.toggled #sidebar-wrapper {
     width: 250px;
   }
@@ -216,6 +211,8 @@ a:hover {
   }
   #menu-items-wrap {
     background-color: white;
+    top: 0px;
+    position: absolute;
   }
   .heading-wrap, .sub-menu-wrap, .credit-but, .story-by-wrap {
     margin-left: 2vw;
@@ -577,6 +574,10 @@ h1 {
 
 .maincontent {
   margin-left: 270px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 @media (max-width: 767px) {
@@ -594,7 +595,11 @@ h1 {
     line-height: 15px;
   }
   .maincontent {
-    margin-left: 5px;
+    margin-left: -15px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
   }
   #hide-sidebar {
     display: none;
@@ -620,14 +625,6 @@ h1 {
 
 .hide {
   width: 0 !important;
-  -webkit-transition: -webkit-transform 2s;
-  -moz-transition: -moz-transform 2s;
-  -o-transition: -o-transform 2s;
-  transition: transform 2s;
-}
-
-.margin-left {
-  margin-left: -15px;
   -webkit-transition: -webkit-transform 2s;
   -moz-transition: -moz-transform 2s;
   -o-transition: -o-transform 2s;
