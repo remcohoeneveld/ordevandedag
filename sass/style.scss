@@ -79,8 +79,15 @@ a:hover {
 }
 
 #wrapper #sidebar-wrapper {
+  display: none;
+}
+
+#wrapper #sidebar-wrapper.finished {
+  display: block;
   width: 270px;
 }
+
+
 
 .article-text {
   z-index: 2000;

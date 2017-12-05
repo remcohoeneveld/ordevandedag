@@ -65,6 +65,9 @@ a:hover {
   transition: all 0.5s ease; }
 
 #wrapper #sidebar-wrapper {
+  width: 0; }
+
+#wrapper #sidebar-wrapper.finished {
   width: 270px; }
 
 .article-text {
