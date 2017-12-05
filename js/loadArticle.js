@@ -3,32 +3,56 @@ var backgroundChartColor = 'rgb(246, 246, 247)';
 var backgroundDarkChartColor = 'rgb(158, 161, 174)';
 var borderChartColor = 'rgb(52, 59, 86)';
 
+ajaxCall(15);
 
-$.getJSON("https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/pre-ordevandedag/document/_search", function (json) {
-    for (hits in json['hits']['hits']) {
-        //creating all the content
-        appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
-        //creating the sidebar menu
-        appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
-        //creating the active status on the sidebar menu
-        scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
-        // creating the detail page for the content [views short]
-        getDetailJson(json['hits']['hits'][hits]['_source'], hits);
-        // creating the detail page for the content [contributors]
-        getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
-        // creating the detail page for the content [views long]
-        getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
-        // searching an article
-        searchArticle(hits);
-        // hiding the sidebar
-        hideSidebar();
-    }
-});
+function ajaxCall(size) {
+    $.ajax({
+        url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?size=" + size,
+        success: function (json) {
+            if (json !== null) {
+                for (hits in json['hits']['hits']) {
+                    //creating all the content
+                    appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
+                    //creating the sidebar menu
+                    appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
+                    //creating the active status on the sidebar menu
+                    scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
+                    // creating the detail page for the content [views short]
+                    getDetailJson(json['hits']['hits'][hits]['_source'], hits);
+                    // creating the detail page for the content [contributors]
+                    getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
+                    // creating the detail page for the content [views long]
+                    getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
+                    // searching an article
+                    searchArticle(hits);
+                    //show only the seasonal items
+                    showSeasonal(json['hits']['hits'][hits]['_source']);
+                    //show all the items
+                    showAll(json['hits']['hits'][hits]['_source']);
+                    // hiding the sidebar
+                    hideSidebar();
+                }
+            }
+        },
+        error: function () {
+            console.log('not found')
+        }
+    });
+
+}
+
 
 function appendJsonToContent(item, number) {
     var wrapper = $(".articles");
-    wrapper.append("<div class=\"panel-article card\" id=" + item['page_id'] + " ></div>");
+
+
+    if(item['seasonality'] === true) {
+        wrapper.append("<div class=\"panel-article card season\" id=" + item['page_id'] + " ></div>");
+    } else {
+        wrapper.append("<div class=\"panel-article card\" id=" + item['page_id'] + " ></div>");
+    }
     var articleContainer = $("#" + item['page_id']);
+
 
     articleContainer.append("<div class=\"front\" id=" + "first" + number + "></div>");
     articleContainer.append("<div class=\"back\" id=" + "second" + number + "></div>");
@@ -40,16 +64,22 @@ function appendJsonToContent(item, number) {
     var articleContentThird = $("#third" + number);
     var articleContentFourth = $("#fourth" + number);
 
-    articleContent.append("<button type=\"button\" class=\"btn btn-primary\" id='details" + number + "'><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></button>");
-    articleContentSecond.append("<button type=\"button\" class=\"btn btn-primary\" id='prev" + number + "'><i class=\"fa fa-minus-square-o\" aria-hidden=\"true\"></i></button>");
+    articleContent.append("<button type=\"button\" class=\"btn btn-primary right\" id='details" + number + "'><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></button>");
+    articleContentSecond.append("<button type=\"button\" class=\"btn btn-primary right\" id='prev" + number + "'><i class=\"fa fa-minus-square-o\" aria-hidden=\"true\"></i></button>");
 
     articleContentSecond.hide();
     articleContentThird.hide();
     articleContentFourth.hide();
 
-    articleContent.append("<h1 class=\"article-head\">" + item['clean_title'] + "</h1>");
+
+    if (item['seasonality'] === true) {
+        articleContent.append("<h1 class=\"article-head\">" + item['clean_title'] + "<span class=\"badge badge-secondary seasonal\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i> Seasonal</span></h1>");
+    } else {
+        articleContent.append("<h1 class=\"article-head\">" + item['clean_title'] + "</h1>");
+    }
+
     articleContent.append("<p class=\"article-text\">" + item['extract'] + "</p>");
-    articleContent.append("<a href=https://nl.wikipedia.org/wiki/"+ item['title'] +"><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View on wikipedia</button></a>");
+    articleContent.append("<a href=https://nl.wikipedia.org/wiki/" + item['title'] + "><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View on wikipedia</button></a>");
 
 
     $('#details' + number).click(function () {
@@ -78,12 +108,17 @@ function appendJsonToContent(item, number) {
 }
 
 function appendJsonToMenu(item, number) {
+
     number++;
     var wrapper = $("#menu-items-wrap");
     wrapper.append("<div class=\"menu-item chapter-item\"><div class=\"heading-wrap\" id=\"menu-" + item['page_id'] + "\" data-link=\"heading-one-anim\"></div></div>");
     var menuItem = $("#menu-" + item['page_id']);
     menuItem.append("<div class=\"chapter-num\">0" + number + "&nbsp;</div>");
-    menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></div>");
+    if (item['seasonality'] === true) {
+        menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i>" + item['clean_title'] + "</a></div>");
+    } else {
+        menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></div>");
+    }
     menuItem.append("<div class=\"yellow-line\"></div>");
 
     var mobileListItem = $('.dropdown-menu');
@@ -217,7 +252,7 @@ function getDetailJsonDay(item, number) {
                     labels.push(jsonData[i]['timestamp']);
                 }
                 articleContent.append("<div class='aspect-ratio'><canvas id=articleviews-" + item['page_id'] + "></canvas></div>");
-                articleContent.append("<a href="+ item['view_url'] +"><button type=\"button\" class=\"btn btn-secondary content-center btn-lg\" id='link" + number + "'>View the data</button></a>");
+                articleContent.append("<a href=" + item['view_url'] + "><button type=\"button\" class=\"btn btn-secondary content-center btn-lg\" id='link" + number + "'>View the data</button></a>");
                 var pagechartname = item['clean_title'] + " detailed views";
 
                 new Chart($("#articleviews-" + item['page_id'])[0].getContext('2d'), {
@@ -257,6 +292,25 @@ $window.scroll(function () {
     }
 
 });
+
+
+function showSeasonal(item) {
+    $('#seasonal').click(function () {
+        var articleContainer = $("#" + item['page_id']);
+        if(!articleContainer.hasClass('season')){
+            articleContainer.hide();
+        }
+    });
+}
+
+function showAll(item) {
+    $('#all').click(function () {
+        var articleContainer = $("#" + item['page_id']);
+        if(!articleContainer.hasClass('season')){
+            articleContainer.show();
+        }
+    });
+}
 
 function searchArticle(number) {
     $("#searchItems").keyup(function () {
