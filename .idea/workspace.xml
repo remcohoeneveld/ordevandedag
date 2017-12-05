@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1f9f2a43-3764-4427-b8ee-6ab8f16503eb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loadArticle.js" afterPath="$PROJECT_DIR$/js/loadArticle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/style.scss" afterPath="$PROJECT_DIR$/sass/style.scss" />
     </list>
@@ -32,11 +31,9 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="539" column="7" lean-forward="false" selection-start-line="539" selection-start-column="7" selection-end-line="539" selection-end-column="7" />
-              <folding>
-                <marker date="1512425339128" expanded="true" signature="11287:11438" ph="{...}" />
-              </folding>
+            <state relative-caret-position="8108">
+              <caret line="541" column="7" lean-forward="false" selection-start-line="541" selection-start-column="7" selection-end-line="541" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,8 +41,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9540">
-              <caret line="636" column="0" lean-forward="true" selection-start-line="636" selection-start-column="0" selection-end-line="636" selection-end-column="0" />
+            <state relative-caret-position="292">
+              <caret line="543" column="33" lean-forward="false" selection-start-line="543" selection-start-column="33" selection-end-line="543" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -54,10 +51,10 @@
       <file leaf-file-name="loadArticle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="86" lean-forward="false" selection-start-line="30" selection-start-column="86" selection-end-line="30" selection-end-column="86" />
+            <state relative-caret-position="572">
+              <caret line="77" column="1" lean-forward="true" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
               <folding>
-                <marker date="1512425615927" expanded="true" signature="3486:3492" ph=" " />
+                <marker date="1512466043572" expanded="true" signature="3901:3907" ph=" " />
               </folding>
             </state>
           </provider>
@@ -75,11 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rgb</find>
-      <find>menu</find>
-      <find>@media</find>
-      <find>hide</find>
-      <find>article-re</find>
       <find>resp</find>
       <find>@med</find>
       <find>canvas</find>
@@ -100,11 +92,16 @@
       <find>clean_title</find>
       <find>350px</find>
       <find>console.log</find>
-      <find>side</find>
-      <find>height</find>
       <find>flipped</find>
-      <find>third</find>
       <find>300px</find>
+      <find>third</find>
+      <find>view data</find>
+      <find>400</find>
+      <find>side</find>
+      <find>card</find>
+      <find>lightgrey</find>
+      <find>height</find>
+      <find>title</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -291,12 +288,12 @@
       <workItem from="1512328671528" duration="2319000" />
       <workItem from="1512381746552" duration="1336000" />
       <workItem from="1512396004394" duration="9860000" />
-      <workItem from="1512406844976" duration="11212000" />
+      <workItem from="1512406844976" duration="13407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71019000" />
+    <option name="totallyTimeSpent" value="73214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -480,16 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="539" column="7" lean-forward="false" selection-start-line="539" selection-start-column="7" selection-end-line="539" selection-end-column="7" />
-          <folding>
-            <marker date="1512425339128" expanded="true" signature="11287:11438" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
@@ -501,20 +488,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8108">
+          <caret line="541" column="7" lean-forward="false" selection-start-line="541" selection-start-column="7" selection-end-line="541" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sass/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9540">
-          <caret line="636" column="0" lean-forward="true" selection-start-line="636" selection-start-column="0" selection-end-line="636" selection-end-column="0" />
+        <state relative-caret-position="292">
+          <caret line="543" column="33" lean-forward="false" selection-start-line="543" selection-start-column="33" selection-end-line="543" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="86" lean-forward="false" selection-start-line="30" selection-start-column="86" selection-end-line="30" selection-end-column="86" />
+        <state relative-caret-position="572">
+          <caret line="77" column="1" lean-forward="true" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
           <folding>
-            <marker date="1512425615927" expanded="true" signature="3486:3492" ph=" " />
+            <marker date="1512466043572" expanded="true" signature="3901:3907" ph=" " />
           </folding>
         </state>
       </provider>

@@ -1,3 +1,9 @@
+//initialize color scheme
+var backgroundChartColor = 'rgb(246, 246, 247)';
+var backgroundDarkChartColor = 'rgb(158, 161, 174)';
+var borderChartColor = 'rgb(52, 59, 86)';
+
+
 $.getJSON("https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/pre-ordevandedag/document/_search", function (json) {
     for (hits in json['hits']['hits']) {
         //creating all the content
@@ -6,14 +12,12 @@ $.getJSON("https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazo
         appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
         //creating the active status on the sidebar menu
         scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
-        // creating the detail page for the content [views]
+        // creating the detail page for the content [views short]
         getDetailJson(json['hits']['hits'][hits]['_source'], hits);
         // creating the detail page for the content [contributors]
         getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
-
-        //getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
-
-
+        // creating the detail page for the content [views long]
+        getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
         // searching an article
         searchArticle(hits);
         // hiding the sidebar
@@ -28,18 +32,20 @@ function appendJsonToContent(item, number) {
 
     articleContainer.append("<div class=\"front\" id=" + "first" + number + "></div>");
     articleContainer.append("<div class=\"back\" id=" + "second" + number + "></div>");
-    articleContainer.append("<div class=\"side\" id=" + "third" + number + "></div>");
-    //articleContainer.append("<div class=\"sid\" id=" + "fourth" + number + "></div>");
+    articleContainer.append("<div class=\"side\" id=" + "fourth" + number + "></div>");
+    articleContainer.append("<div class=\"back\" id=" + "third" + number + "></div>");
 
     var articleContent = $("#first" + number);
     var articleContentSecond = $("#second" + number);
     var articleContentThird = $("#third" + number);
+    var articleContentFourth = $("#fourth" + number);
 
     articleContent.append("<button type=\"button\" class=\"btn btn-primary\" id='details" + number + "'><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></button>");
     articleContentSecond.append("<button type=\"button\" class=\"btn btn-primary\" id='prev" + number + "'><i class=\"fa fa-minus-square-o\" aria-hidden=\"true\"></i></button>");
 
     articleContentSecond.hide();
     articleContentThird.hide();
+    articleContentFourth.hide();
 
     articleContent.append("<h1 class=\"article-head\">" + item['clean_title'] + "</h1>");
     articleContent.append("<p class=\"article-text\">" + item['extract'] + "</p>");
@@ -52,6 +58,7 @@ function appendJsonToContent(item, number) {
         articleContent.fadeToggle("slow");
         articleContentSecond.fadeIn("slow");
         articleContentThird.fadeIn("slow");
+        articleContentFourth.fadeIn("slow");
 
         $('#' + item['page_id']).addClass('height')
 
@@ -63,6 +70,7 @@ function appendJsonToContent(item, number) {
         articleContent.fadeToggle(1000);
         articleContentSecond.fadeOut("slow");
         articleContentThird.fadeOut("slow");
+        articleContentFourth.fadeOut("slow");
 
         $('#' + item['page_id']).removeClass('height')
     });
@@ -79,7 +87,7 @@ function appendJsonToMenu(item, number) {
     menuItem.append("<div class=\"yellow-line\"></div>");
 
     var mobileListItem = $('.dropdown-menu');
-    mobileListItem.append("<li><a href=\"#" + item['page_id'] + "\">" + item['title'] + "</a></li>");
+    mobileListItem.append("<li><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></li>");
 }
 
 
@@ -115,8 +123,7 @@ function getDetailJson(item, number) {
                 jsonData = x.query.pages[item['page_id']];
                 articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
                 articleContent.append("<div class='aspect-ratio'><canvas id=article-" + jsonData.pageid + "></canvas></div>");
-                articleContent.append("<a href="+ item['view_url'] +"><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View data</button></a>");
-                var pagechartname = jsonData.title;
+                var pagechartname = jsonData.title + " views last 30 days";
                 var pageviews = jsonData.pageviews;
                 var views = [];
                 var viewlabels = [];
@@ -134,8 +141,8 @@ function getDetailJson(item, number) {
                         labels: viewlabels,
                         datasets: [{
                             label: pagechartname,
-                            backgroundColor: 'rgb(158, 162, 181)',
-                            borderColor: 'rgb(52, 59, 86)',
+                            backgroundColor: backgroundChartColor,
+                            borderColor: borderChartColor,
                             data: views
                         }]
                     },
@@ -179,8 +186,8 @@ function getDetailJsonExtra(item, number) {
                         labels: name,
                         datasets: [{
                             label: pagechartname,
-                            backgroundColor: 'rgb(158, 162, 200)',
-                            borderColor: 'rgb(52, 59, 86)',
+                            backgroundColor: backgroundChartColor,
+                            borderColor: borderChartColor,
                             data: userid
                         }]
                     },
@@ -210,6 +217,7 @@ function getDetailJsonDay(item, number) {
                     labels.push(jsonData[i]['timestamp']);
                 }
                 articleContent.append("<div class='aspect-ratio'><canvas id=articleviews-" + item['page_id'] + "></canvas></div>");
+                articleContent.append("<a href="+ item['view_url'] +"><button type=\"button\" class=\"btn btn-secondary content-center btn-lg\" id='link" + number + "'>View the data</button></a>");
                 var pagechartname = item['clean_title'] + " detailed views";
 
                 new Chart($("#articleviews-" + item['page_id'])[0].getContext('2d'), {
@@ -221,8 +229,8 @@ function getDetailJsonDay(item, number) {
                         labels: labels,
                         datasets: [{
                             label: pagechartname,
-                            backgroundColor: 'rgb(158, 162, 200)',
-                            borderColor: 'rgb(52, 59, 86)',
+                            backgroundColor: backgroundDarkChartColor,
+                            borderColor: borderChartColor,
                             data: views
                         }]
                     },

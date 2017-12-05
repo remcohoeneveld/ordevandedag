@@ -416,44 +416,32 @@ a:hover {
   transform-style: preserve-3d;
   -webkit-transform-origin: 50% 50%;
   background: none; }
-
-.card div {
-  display: block;
-  height: 100%;
-  width: 100%;
-  color: black;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-.card .front {
-  background: white;
-  padding: 20px; }
-
-.card .back {
-  background: white;
-  padding: 20px;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
-
-.card .side {
-  background: white;
-  padding: 20px;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
-
-.card .sid {
-  background: white;
-  padding: 20px;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
+  .card div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: black;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .card .front {
+    background: white;
+    padding: 20px; }
+  .card .back {
+    background: white;
+    padding: 20px;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
+  .card .side {
+    background: #f6f6f7;
+    padding: 20px;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
 
 .card.flipped {
   -webkit-transform: rotateY(180deg);
@@ -464,17 +452,31 @@ a:hover {
 .btn-primary {
   background-color: #343b56;
   border-color: #343b56; }
+  .btn-primary:hover {
+    background-color: black;
+    border-color: #343b56; }
+  .btn-primary:active {
+    background-color: black;
+    border-color: #343b56; }
+  .btn-primary:focus {
+    box-shadow: none; }
 
-.btn-primary:hover {
-  background-color: black;
+.btn-secondary {
+  background-color: #4b5472;
+  border-color: #6b728d; }
+  .btn-secondary:hover {
+    background-color: black;
+    border-color: #343b56; }
+  .btn-secondary:active {
+    background-color: black;
+    border-color: #343b56; }
+  .btn-secondary:focus {
+    box-shadow: none; }
+
+.btn-secondary:not([disabled]):not(.disabled).active, .btn-secondary:not([disabled]):not(.disabled):active, .show > .btn-secondaryc.dropdown-toggle {
+  box-shadow: none;
+  background-color: #343b56;
   border-color: #343b56; }
-
-.btn-primary:active {
-  background-color: black;
-  border-color: #343b56; }
-
-.btn-primary:focus {
-  box-shadow: none; }
 
 .btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
   box-shadow: none;
@@ -509,7 +511,7 @@ h1 {
     display: none; } }
 
 .aspect-ratio {
-  height: 300px !important; }
+  height: 350px !important; }
 
 .margin-right {
   margin-right: 20px; }
@@ -538,8 +540,12 @@ h1 {
   transition: transform 2s; }
 
 .height {
-  height: 1100px;
+  height: 1400px;
   -webkit-transition: -webkit-transform 2s;
   -moz-transition: -moz-transform 2s;
   -o-transition: -o-transform 2s;
   transition: transform 2s; }
+
+.content-center {
+  margin: 0 auto;
+  display: block; }

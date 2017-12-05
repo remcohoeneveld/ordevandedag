@@ -14,7 +14,7 @@
   src: url(../fonts/FuturaHeavy.ttf);
 }
 
-.articles{
+.articles {
 
   background: white;
 }
@@ -42,11 +42,11 @@ a:hover {
 }
 
 .yellow-src {
-  width:5000px;
+  width: 5000px;
   height: 3175px;
 }
 
-.fixed-pos{
+.fixed-pos {
   display: block;
   opacity: 1;
   left: 0px;
@@ -81,7 +81,6 @@ a:hover {
 #wrapper #sidebar-wrapper {
   width: 270px;
 }
-
 
 .article-text {
   z-index: 2000;
@@ -158,7 +157,7 @@ a:hover {
   right: 20px;
 }
 
-#navbarCollapseNav{
+#navbarCollapseNav {
   display: none;
 }
 
@@ -369,8 +368,6 @@ a:hover {
   }
 }
 
-
-
 @media (max-height: 860px) {
   #menu .chapter-heading {
     font-size: 16px;
@@ -504,10 +501,11 @@ a:hover {
   float: right;
 }
 
+// the card
 .card {
-  border-top:0;
-  border-left:0;
-  border-right:0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
   border-bottom: solid 1px #343b56;
   width: 100%;
   -webkit-transition: -webkit-transform 2s;
@@ -520,48 +518,36 @@ a:hover {
   transform-style: preserve-3d;
   -webkit-transform-origin: 50% 50%;
   background: none;
-}
-
-.card div {
-  display: block;
-  height: 100%;
-  width: 100%;
-  color: black;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.card .front {
-  background: white;
-  padding: 20px;
-}
-
-.card .back {
-  background: white;
-  padding: 20px;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-.card .side {
-  background: white;
-  padding: 20px;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-.card .sid {
-  background: white;
-  padding: 20px;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+  div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: black;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .front {
+    background: white;
+    padding: 20px;
+  }
+  .back {
+    background: white;
+    padding: 20px;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  .side {
+    background: rgb(246, 246, 247);
+    padding: 20px;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
 }
 
 .card.flipped {
@@ -571,92 +557,110 @@ a:hover {
   transform: rotateY(180deg);
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #343b56;
   border-color: #343b56;
+  &:hover {
+    background-color: black;
+    border-color: #343b56;
+  }
+  &:active {
+    background-color: black;
+    border-color: #343b56;
+  }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
-.btn-primary:hover{
-  background-color: black;
-  border-color: #343b56;
+.btn-secondary{
+  background-color: rgb(75, 84, 114);
+  border-color: rgb(107, 114, 141);
+  &:hover {
+    background-color: black;
+    border-color: #343b56;
+  }
+  &:active {
+    background-color: black;
+    border-color: #343b56;
+  }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
-.btn-primary:active{
-  background-color: black;
-  border-color: #343b56;
-}
-
-.btn-primary:focus{
+.btn-secondary:not([disabled]):not(.disabled).active, .btn-secondary:not([disabled]):not(.disabled):active, .show > .btn-secondaryc.dropdown-toggle {
   box-shadow: none;
-
-}
-
-.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
-  box-shadow:none;
   background-color: #343b56;
   border-color: #343b56;
 }
 
-.top-class{
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  box-shadow: none;
+  background-color: #343b56;
+  border-color: #343b56;
+}
+
+.top-class {
   margin-top: -70px;
 }
 
-.navbar-toggler{
+.navbar-toggler {
   line-height: normal;
 }
 
-h1{
-  font-size:2em;
+h1 {
+  font-size: 2em;
 }
 
-.maincontent{
+.maincontent {
   margin-left: 270px;
 }
 
 @media (max-width: 767px) {
-  #wrapper #sidebar-wrapper{
+  #wrapper #sidebar-wrapper {
     display: none;
   }
-  #navbarCollapseNav{
+  #navbarCollapseNav {
     display: block;
   }
-  .article-head{
+  .article-head {
     font-size: 1.5em;
   }
-  .article-text{
+  .article-text {
     font-size: 13px;
     line-height: 15px;
   }
-  .maincontent{
+  .maincontent {
     margin-left: 5px;
   }
-  #hide-sidebar{
+  #hide-sidebar {
     display: none;
   }
 }
 
-.aspect-ratio{
-  height: 400px !important;
+.aspect-ratio {
+  height: 350px !important;
 }
 
-.margin-right{
+.margin-right {
   margin-right: 20px;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   padding: 0;
-  li{
+  li {
     padding: 10px;
-    &:hover{
+    &:hover {
       background-color: #343b56;
-      a{
+      a {
         color: white;
       }
     }
   }
 }
 
-.hide{
+.hide {
   width: 0 !important;
   -webkit-transition: -webkit-transform 2s;
   -moz-transition: -moz-transform 2s;
@@ -664,7 +668,7 @@ h1{
   transition: transform 2s;
 }
 
-.margin-left{
+.margin-left {
   margin-left: -15px;
   -webkit-transition: -webkit-transform 2s;
   -moz-transition: -moz-transform 2s;
@@ -672,10 +676,15 @@ h1{
   transition: transform 2s;
 }
 
-.height{
-  height:1100px;
+.height {
+  height: 1400px;
   -webkit-transition: -webkit-transform 2s;
   -moz-transition: -moz-transform 2s;
   -o-transition: -o-transform 2s;
   transition: transform 2s;
+}
+
+.content-center {
+  margin: 0 auto;
+  display: block;
 }
