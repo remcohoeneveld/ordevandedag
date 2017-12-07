@@ -81,6 +81,7 @@ a:hover {
 
 #wrapper #sidebar-wrapper.finished {
   left: 250px;
+  overflow-x: hidden;
 }
 
 .article-text {
@@ -217,6 +218,9 @@ a:hover {
   .heading-wrap, .sub-menu-wrap, .credit-but, .story-by-wrap {
     margin-left: 2vw;
   }
+  .heading-wrap{
+    padding-top: 22px;
+  }
   .sub-menu-wrap {
     margin-top: 1vw;
     position: relative;
@@ -329,12 +333,10 @@ a:hover {
   }
   .chapter-item {
     display: block;
-    padding-top: 35px;
   }
   @media (max-height: 1000px) {
     .chapter-item {
       display: block;
-      padding-top: 22px;
     }
   }
 

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f9f2a43-3764-4427-b8ee-6ab8f16503eb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/loadSorted.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sorted.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
@@ -17,15 +19,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="83" column="45" lean-forward="false" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="460">
+              <caret line="82" column="35" lean-forward="false" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sorted.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sorted.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sass/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="220" column="16" lean-forward="false" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -33,21 +52,11 @@
       <file leaf-file-name="loadArticle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="465">
+              <caret line="330" column="32" lean-forward="false" selection-start-line="330" selection-start-column="32" selection-end-line="330" selection-end-column="32" />
               <folding>
-                <marker date="1512492450921" expanded="true" signature="4895:4901" ph=" " />
+                <marker date="1512689768587" expanded="true" signature="5266:5272" ph=" " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="214" column="23" lean-forward="false" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -64,14 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>350px</find>
-      <find>console.log</find>
-      <find>flipped</find>
-      <find>300px</find>
-      <find>third</find>
-      <find>view data</find>
-      <find>400</find>
-      <find>side</find>
       <find>card</find>
       <find>lightgrey</find>
       <find>height</find>
@@ -83,7 +84,6 @@
       <find>.btn-prim</find>
       <find>height: 100</find>
       <find>btn-primary</find>
-      <find>season</find>
       <find>wrapper</find>
       <find>sidebar-wrapper</find>
       <find>margin-left</find>
@@ -93,7 +93,16 @@
       <find>yellow-line</find>
       <find>visible</find>
       <find>menu-items</find>
+      <find>.finished</find>
+      <find>console.log</find>
+      <find>season</find>
+      <find>data-sort</find>
       <find>click</find>
+      <find>articles</find>
+      <find>addclas</find>
+      <find>menu</find>
+      <find>menu-</find>
+      <find>all</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -131,9 +140,11 @@
         <option value="$PROJECT_DIR$/css3-preloader-transition-finish/css/main.css" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/sass/style.scss" />
-        <option value="$PROJECT_DIR$/js/loadArticle.js" />
+        <option value="$PROJECT_DIR$/js/loadSorted.js" />
+        <option value="$PROJECT_DIR$/sorted.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/loadArticle.js" />
+        <option value="$PROJECT_DIR$/sass/style.scss" />
       </list>
     </option>
   </component>
@@ -155,8 +166,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="979" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -237,9 +249,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\js" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/fonts" />
     </key>
   </component>
@@ -284,12 +296,12 @@
       <workItem from="1512381746552" duration="1336000" />
       <workItem from="1512396004394" duration="9860000" />
       <workItem from="1512406844976" duration="13522000" />
-      <workItem from="1512467996229" duration="12592000" />
+      <workItem from="1512467996229" duration="18367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85921000" />
+    <option name="totallyTimeSpent" value="91696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -332,8 +344,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/b5a8bf3f-37f2-43c3-ac26-fb03e47642a8.svg" />
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/d14a0bc4-5dcd-48b6-8747-98d111e6ee58.svg" />
     <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/829324c5-bffc-40ea-82c5-de2eb1d5a8a0.svg" />
     <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/20073de8-56dd-4e4c-9434-5097c3f2fd28.svg" />
     <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/8741fba4-5847-45da-858a-a70d6208f327.svg" />
@@ -516,32 +526,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/style.scss">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="214" column="23" lean-forward="false" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
+        <state relative-caret-position="460">
+          <caret line="82" column="35" lean-forward="false" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/loadSorted.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sorted.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="465">
+          <caret line="330" column="32" lean-forward="false" selection-start-line="330" selection-start-column="32" selection-end-line="330" selection-end-column="32" />
           <folding>
-            <marker date="1512492450921" expanded="true" signature="4895:4901" ph=" " />
+            <marker date="1512689768587" expanded="true" signature="5266:5272" ph=" " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/sass/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="83" column="45" lean-forward="false" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="337">
+          <caret line="220" column="16" lean-forward="false" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

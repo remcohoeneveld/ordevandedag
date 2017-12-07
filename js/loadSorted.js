@@ -5,17 +5,13 @@ var borderChartColor = 'rgb(52, 59, 86)';
 var from = 0;
 
 $.ajax({
-    url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=15",
+    url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=100",
     success: function (json) {
         if (json !== null) {
             for (hits in json['hits']['hits']) {
                 //creating all the content
                 appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
                 //creating the sidebar menu
-                appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
-                //creating the active status on the sidebar menu
-                scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
-                // creating the detail page for the content [views short]
                 getDetailJson(json['hits']['hits'][hits]['_source'], hits);
                 // creating the detail page for the content [contributors]
                 getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
@@ -29,7 +25,7 @@ $.ajax({
                 showAll(json['hits']['hits'][hits]['_source']);
                 // hiding the sidebar
                 hideSidebar();
-                //sortArticles();
+                sortArticles();
             }
         }
     },
@@ -73,6 +69,7 @@ function appendJsonToContent(item, number) {
     }
 
     articleContent.append("<p class=\"article-text\">" + item['extract'] + "</p>");
+    articleContent.append("<p class=\"alert alert-secondary\"> " + item['seasonality_percentage'] +"% change on being seasonal</p>");
     articleContent.append("<a href=https://nl.wikipedia.org/wiki/" + item['title'] + "><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View on wikipedia</button></a>");
 
 
@@ -101,51 +98,11 @@ function appendJsonToContent(item, number) {
 
 }
 
-function appendJsonToMenu(item, number) {
-
-    number++;
-    var wrapper = $("#menu-items-wrap");
-    if (item['seasonality'] === true) {
-        wrapper.append("<div class=\"menu-item chapter-item\"><div class=\"heading-wrap season\" id=\"menu-" + item['page_id'] + "\" data-link=\"heading-one-anim\"></div></div>");
-    } else {
-        wrapper.append("<div class=\"menu-item chapter-item\"><div class=\"heading-wrap\" id=\"menu-" + item['page_id'] + "\" data-link=\"heading-one-anim\"></div></div>");
-    }
-    var menuItem = $("#menu-" + item['page_id']);
-    menuItem.append("<div class=\"chapter-num\">0" + number + "&nbsp;</div>");
-    if (item['seasonality'] === true) {
-        menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i>" + item['clean_title'] + "</a></div>");
-    } else {
-        menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></div>");
-    }
-    menuItem.append("<div class=\"yellow-line\"></div>");
-
-    var mobileListItem = $('.dropdown-menu');
-    mobileListItem.append("<li><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></li>");
-}
-
-
-function scrollActiveMenu(item) {
-    $(window).on('scroll', function () {
-        $("#" + item['page_id']).each(function () {
-            var menuItem = $("#menu-" + item['page_id']);
-
-            var visible = $(this).visible();
-            if (visible) {
-                menuItem.addClass('active');
-
-            } else {
-                menuItem.removeClass('active');
-            }
-        });
-    });
-}
 
 
 function hideSidebar() {
-    $('#hide-sidebar').click(function () {
-        $('#sidebar-wrapper').toggleClass("hide");
-        $('.row').toggleClass("maincontent");
-    });
+    $('#sidebar-wrapper').hide();
+    $('.row').removeClass('maincontent');
 }
 
 function getDetailJson(item, number) {
@@ -307,11 +264,6 @@ $window.scroll(function () {
 function showSeasonal(item) {
     $('#seasonal').click(function () {
         var articleContainer = $("#" + item['page_id']);
-        var menuContainer = $("#menu-" + item['page_id']);
-        if (!menuContainer.hasClass('season')){
-            menuContainer.hide();
-        }
-
         if (!articleContainer.hasClass('season')) {
             articleContainer.hide();
         }
@@ -325,10 +277,6 @@ function showAll(item) {
         var articleContainer = $("#" + item['page_id']);
         if (!articleContainer.hasClass('season')) {
             articleContainer.show();
-        }
-        var menuContainer = $("#menu-" + item['page_id']);
-        if (!menuContainer.hasClass('season')){
-            menuContainer.show();
         }
     });
 }
