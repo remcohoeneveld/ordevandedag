@@ -8,13 +8,13 @@
     <meta name="author" content="">
     <title>Wikipedia popular events</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/default.css"/>
     <link rel="stylesheet" type="text/css" href="css/bookblock.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -83,17 +83,17 @@
         </div>
     </div>
 
-    <div class="row justify-content-center maincontent">
+    <div class="row justify-content-center maincontent filters" id="filters">
         <div class="col-md-9">
             <div class="date-time-picker">
                 <p>Date: <input type="text" id="datepicker"> <input type="text" id="alternate" size="30"></p>
             </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" id="all" href="#">All</a>
+                    <a class="nav-link" id="all" href="#filters">All</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="seasonal" href="#">Seasonal</a>
+                    <a class="nav-link" id="seasonal" href="#filters">Seasonal</a>
                 </li>
             </ul>
         </div>

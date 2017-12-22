@@ -10,8 +10,7 @@
 }
 
 @font-face {
-  font-family: Futura;
-  src: url(../fonts/911Fonts.com_FuturaHeavy__-_911fonts.com_fonts_pITw.ttf);
+  font-family: 'Roboto', sans-serif;
 }
 
 .articles {
@@ -195,9 +194,7 @@ a:hover {
   opacity: 0;
   left: -300px;
   #menu-header {
-    padding: 1vw 1.2vw 5vw 1.5vw;
-    width: 270px;
-    height: 150px;
+    width: 100%;
     background-color: #343b56;
     background-image: url(../images/blue-bg2@2x.png);
     background-size: 198px 198px;
@@ -206,6 +203,7 @@ a:hover {
   }
   #small-logo-top-left {
     width: 100%;
+    margin: 10px 0;
     height: auto;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
@@ -219,7 +217,7 @@ a:hover {
     margin-left: 2vw;
   }
   .heading-wrap{
-    padding-top: 22px;
+    padding: 5px;
   }
   .sub-menu-wrap {
     margin-top: 1vw;
@@ -229,10 +227,12 @@ a:hover {
     width: 100%;
   }
   .yellow-line {
-    width: 2vw;
-    height: 7px;
+    width: 10%;
+    height: 10px;
     background: #b7b6aa;
+    background-color: whitesmoke;
     display: block;
+    margin-top: 10px;
   }
 
   .ram-sub-menu {
@@ -243,23 +243,24 @@ a:hover {
     color: #343b56;
     font-size: calc(14px + 1.2vh);
     opacity: 1;
-    font-family: Futura;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
   }
   .chapter-heading {
+    font-size: 15px;
+    font-weight: bolder;
+    padding-bottom: 0px;
     color: #343b56;
-    font-size: calc(12px + 0.9vh);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding-bottom: 10px;
     opacity: 1;
     -webkit-transition: opacity 500ms ease-out;
     -moz-transition: opacity 500ms ease-out;
     -o-transition: opacity 500ms ease-out;
     transition: opacity 500ms ease-out;
-    font-family: Futura;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -283,7 +284,7 @@ a:hover {
     -moz-transition: opacity 500ms ease-out;
     -o-transition: opacity 500ms ease-out;
     transition: opacity 500ms ease-out;
-    font-family: Futura;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -309,7 +310,7 @@ a:hover {
     letter-spacing: 0.5px;
     padding-bottom: 3px;
     padding-top: 5px;
-    font-family: Futura;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -341,11 +342,6 @@ a:hover {
   }
 
   @media (max-height: 860px) {
-    .chapter-heading {
-      font-size: 16px;
-      padding-bottom: 5px;
-    }
-
     .chapter-item {
       display: block;
     }
@@ -364,11 +360,6 @@ a:hover {
       font-size: 20px;
     }
 
-    .chapter-heading {
-      font-size: 16px;
-      padding-bottom: 5px;
-    }
-
     .yellow-line {
       height: 3px;
     }
@@ -381,7 +372,7 @@ a:hover {
 
 @media (max-height: 760px) {
   #menu .chapter-item {
-    display: none;
+    display: block;
   }
 }
 
@@ -432,18 +423,18 @@ a:hover {
 .chapter-num {
   display: block;
   color: rgb(52, 59, 86);
-  font-family: Futura;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
 .chapter-heading {
   color: rgb(52, 59, 86);
-  font-family: Futura;
+  font-family: 'Roboto', sans-serif;
 }
 
 .chapter-heading a {
   color: rgb(52, 59, 86);
-  font-family: Futura;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
 }
@@ -666,11 +657,55 @@ h1 {
   margin: 15px;
 }
 
-.date-time-picker{
-  display: inline-block;
-  padding-left: 10px;
-  padding-top: 20px;
-  p{
-    color: #555;
+.filters{
+  .col-md-9{
+    background-color: #343b56;
+    .date-time-picker{
+      display: inline-block;
+      padding-left: 10px;
+      padding-top: 20px;
+      p{
+        color: white;
+        input{
+          border: none;
+          padding: 10px;
+          margin-left: 5px;
+        }
+      }
+    }
+    ul{
+      border-bottom:0;
+      li{
+        a{
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.ui-widget-header{
+  border: none;
+  background:#343b56 ;
+  color: white;
+}
+
+.ui-widget.ui-widget-content {
+  border: solid 3px #343b56;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+  border: 1px solid #3C4050;
+  background: #343b56;
+}
+
+.ui-widget-header .ui-icon{
+  background-image: url(../images/ui-icons.png);
+}
+
+.ui-datepicker-prev-hover, .ui-datepicker-next-hover{
+  &:hover{
+    background-color: #343b56;
+    border: none;
   }
 }

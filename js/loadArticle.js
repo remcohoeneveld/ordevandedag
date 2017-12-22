@@ -33,7 +33,6 @@ datepickerContainer.datepicker({
     }
 });
 
-
 function formatDateString(MyDate) {
     MyDateString = (MyDate.getFullYear() + '/' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/' + ('0' + MyDate.getDate()).slice(-2));
     return MyDateString
@@ -105,6 +104,7 @@ function clearCanvas() {
 
     wrapperArticles.empty();
     wrapperMenu.empty();
+    wrapperMenu.append("<div id=\"menu-header\" class=\"menu-item\" style=\"align-self: flex-start\"><img id=\"small-logo-top-left\" src=\"images/logo-menu.png\" alt=\"logo\"></div>");
 
 }
 
@@ -185,9 +185,20 @@ function appendJsonToMenu(item, number) {
     var menuItem = $("#menu-" + item['page_id']);
     menuItem.append("<div class=\"chapter-num\">0" + number + "&nbsp;</div>");
     if (item['seasonality'] === true) {
-        menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i>" + item['clean_title'] + "</a></div>");
+        menuItem.append(
+            "<a href=\"#" + item['page_id'] + "\">" +
+            "<div class=\"chapter-heading\">" +
+            "<i class=\"fa fa-star\" aria-hidden=\"true\"></i>"
+            + item['clean_title'] +
+            "</div>"+
+            "</a>");
     } else {
-        menuItem.append("<div class=\"chapter-heading\"><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></div>");
+        menuItem.append(
+            "<a href=\"#" + item['page_id'] + "\">" +
+            "<div class=\"chapter-heading\">" +
+            item['clean_title'] +
+            "</div>"+
+            "</a>");
     }
     menuItem.append("<div class=\"yellow-line\"></div>");
 
