@@ -4,48 +4,121 @@ var backgroundDarkChartColor = 'rgb(158, 161, 174)';
 var borderChartColor = 'rgb(52, 59, 86)';
 var from = 0;
 
-$.ajax({
-    url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=10",
-    success: function (json) {
-        if (json !== null) {
-            for (hits in json['hits']['hits']) {
-                //creating all the content
-                appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
-                //creating the sidebar menu
-                appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
-                //creating the active status on the sidebar menu
-                scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
-                // creating the detail page for the content [views short]
-                getDetailJson(json['hits']['hits'][hits]['_source'], hits);
-                // creating the detail page for the content [contributors]
-                getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
-                // creating the detail page for the content [views long]
-                getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
-                // searching an article
-                searchArticle(json['hits']['hits'][hits]['_source'], hits);
-                //show only the seasonal items
-                showSeasonal(json['hits']['hits'][hits]['_source'],hits);
-                //show all the items
-                showAll(json['hits']['hits'][hits]['_source'],hits);
-                // hiding the sidebar
-                hideSidebar();
-                //sortArticles();
-            }
+//getting the datepicker container
+var datepickerContainer = $("#datepicker");
+//creating the current date
+var currentdate = new Date();
+
+//getting the date from the datepicker
+datepickerContainer.datepicker({
+    changeMonth: true,
+    changeYear: true,
+    altField: "#alternate",
+    altFormat: "DD, d MM, yy",
+    dateFormat: "yy-mm-dd",
+    yearRange: '2017:2020',
+    minDate: new Date(2017, 7, 1),
+    showWeek: true,
+    firstDay: 1,
+    maxDate: "-1",
+    onSelect: function (dateText, inst) {
+        //getting the date [String and Object]
+        var dateAsString = dateText; //the first parameter of this function
+        var dateAsObject = $(this).datepicker('getDate'); //the getDate method
+        //checking if the date is in the past and not the future
+        if (dateAsObject < currentdate) {
+            clearCanvas();
+            getData(dateAsObject);
+            console.log(dateAsObject)
         }
-    },
-    error: function () {
-        console.log('not found')
     }
 });
 
 
+function formatDateString(MyDate) {
+    MyDateString = (MyDate.getFullYear() + '/' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/' + ('0' + MyDate.getDate()).slice(-2));
+    console.log(MyDateString);
+    return MyDateString
+}
+
+datepickerContainer.datepicker('setDate', '-1');
+
+var yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+
+getData(yesterday);
+
+var string = "{query: {term: {date: 2017/12/19}}}";
+
+function getData(date) {
+    var payload = {
+        query: {
+            term: {
+                date: formatDateString(date)
+            }
+        }
+    };
+
+    $.ajax({
+        url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=7",
+        type: 'POST',
+        dataType: "JSON",
+        data: JSON.stringify(payload),
+        processData: false,
+        contentType: false,
+        success: function (json) {
+            if (json !== null) {
+                for (hits in json['hits']['hits']) {
+                    //creating all the content
+                    appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
+                    //creating the sidebar menu
+                    appendJsonToMenu(json['hits']['hits'][hits]['_source'], hits);
+                    //creating the active status on the sidebar menu
+                    scrollActiveMenu(json['hits']['hits'][hits]['_source'], hits);
+                    // creating the detail page for the content [views short]
+                    getDetailJson(json['hits']['hits'][hits]['_source'], hits);
+                    // creating the detail page for the content [contributors]
+                    getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
+                    // creating the detail page for the content [views long]
+                    getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
+                    // searching an article
+                    searchArticle(json['hits']['hits'][hits]['_source'], hits);
+                    //show only the seasonal items
+                    showSeasonal(json['hits']['hits'][hits]['_source'], hits);
+                    //show all the items
+                    showAll(json['hits']['hits'][hits]['_source'], hits);
+                    // hiding the sidebar
+                    hideSidebar();
+                    //sortArticles();
+                }
+            }
+        },
+        error: function () {
+            console.log('not found')
+        }
+    });
+
+}
+
+function clearCanvas() {
+
+    var wrapperArticles = $(".articles");
+    var wrapperMenu = $("#menu-items-wrap");
+
+    wrapperArticles.empty();
+    wrapperMenu.empty();
+
+}
+
+
 function appendJsonToContent(item, number) {
+
     var wrapper = $(".articles");
 
     if (item['seasonality'] === true) {
-        wrapper.append("<div class=\"panel-article card season\"  data-sort='"+ item['seasonality_percentage']+"' id=" + item['page_id'] + "></div>");
+        wrapper.append("<div class=\"panel-article card season\"  data-sort='" + item['seasonality_percentage'] + "' id=" + item['page_id'] + "></div>");
     } else {
-        wrapper.append("<div class=\"panel-article card\"  data-sort='"+ item['seasonality_percentage']+"' id=" + item['page_id'] + " ></div>");
+        wrapper.append("<div class=\"panel-article card\"  data-sort='" + item['seasonality_percentage'] + "' id=" + item['page_id'] + " ></div>");
     }
     var articleContainer = $("#" + item['page_id']);
 
@@ -105,6 +178,7 @@ function appendJsonToMenu(item, number) {
 
     number++;
     var wrapper = $("#menu-items-wrap");
+
     if (item['seasonality'] === true) {
         wrapper.append("<div class=\"menu-item chapter-item\"><div class=\"heading-wrap season\" id=\"menu-" + item['page_id'] + "\" data-link=\"heading-one-anim\"></div></div>");
     } else {
@@ -308,7 +382,7 @@ function showSeasonal(item, number) {
     $('#seasonal').click(function () {
         var articleContainer = $("#" + item['page_id']);
         var menuContainer = $("#menu-" + item['page_id']);
-        if (!menuContainer.hasClass('season')){
+        if (!menuContainer.hasClass('season')) {
             menuContainer.hide();
         }
 
@@ -319,7 +393,6 @@ function showSeasonal(item, number) {
 }
 
 
-
 function showAll(item, number) {
     $('#all').click(function () {
         var articleContainer = $("#" + item['page_id']);
@@ -327,7 +400,7 @@ function showAll(item, number) {
             articleContainer.show();
         }
         var menuContainer = $("#menu-" + item['page_id']);
-        if (!menuContainer.hasClass('season')){
+        if (!menuContainer.hasClass('season')) {
             menuContainer.show();
         }
     });
@@ -358,5 +431,7 @@ function sortArticles() {
                 1 : 0;
     });
 
-    $.each(listitems, function (idx, itm) { div.append(itm); });
+    $.each(listitems, function (idx, itm) {
+        div.append(itm);
+    });
 }

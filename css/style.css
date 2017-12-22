@@ -278,8 +278,7 @@ a:hover {
       font-size: 16px;
       padding-bottom: 5px; }
     #menu .chapter-item {
-      display: block;
-      padding-top: 16px; }
+      display: block; }
     #menu .sub-menu-but {
       font-size: 10px; } }
   @media (max-height: 700px) {
@@ -528,6 +527,6 @@ h1 {
 .date-time-picker {
   display: inline-block;
   padding-left: 10px;
-  padding-top: 10px; }
+  padding-top: 20px; }
   .date-time-picker p {
     color: #555; }

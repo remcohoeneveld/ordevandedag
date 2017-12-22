@@ -154,8 +154,6 @@ function appendJsonToContent(item, number) {
 
 }
 
-
-
 function hideSidebar() {
     $('#sidebar-wrapper').hide();
     $('.row').removeClass('maincontent');

@@ -82,10 +82,11 @@
             <img class="yellow-src" src="images/yellow-bg-large.png">
         </div>
     </div>
+
     <div class="row justify-content-center maincontent">
-        <div class="col-md-9 totop articles" id="list">
+        <div class="col-md-9">
             <div class="date-time-picker">
-                <p>Date: <input type="text" id="datepicker"></p>
+                <p>Date: <input type="text" id="datepicker"> <input type="text" id="alternate" size="30"></p>
             </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -97,21 +98,19 @@
             </ul>
         </div>
     </div>
+    <div class="row justify-content-center maincontent">
+        <div class="col-md-9 articles" id="list">
+        </div>
+    </div>
 </div>
 
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="js/jquery.visible.js"></script>
 <script src="js/smooth-scroll.js"></script>
-<script src="js/loadArticle.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="js/datepicker.js"></script>
-<script>
-    $(function () {
-        $("#datepicker").datepicker();
-    });
-</script>
+<script src="js/loadArticle.js"></script>
 <script>
     var scroll = new SmoothScroll('a[href*="#"]');
 
