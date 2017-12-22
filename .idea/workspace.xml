@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f9f2a43-3764-4427-b8ee-6ab8f16503eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/911Fonts.com_FuturaHeavy__-_911fonts.com_fonts_pITw.ttf" afterPath="$PROJECT_DIR$/fonts/911Fonts.com_FuturaHeavy__-_911fonts.com_fonts_pITw.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/datepicker.js" afterPath="$PROJECT_DIR$/js/datepicker.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loadArticle.js" afterPath="$PROJECT_DIR$/js/loadArticle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loadSorted.js" afterPath="$PROJECT_DIR$/js/loadSorted.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/style.scss" afterPath="$PROJECT_DIR$/sass/style.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,10 +36,10 @@
       <file leaf-file-name="loadArticle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+            <state relative-caret-position="251">
+              <caret line="94" column="23" lean-forward="false" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="23" />
               <folding>
-                <marker date="1513942741266" expanded="true" signature="7402:7408" ph=" " />
+                <marker date="1513942873703" expanded="true" signature="7333:7339" ph=" " />
               </folding>
             </state>
           </provider>
@@ -97,13 +90,13 @@
       <find>fourth</find>
       <find>details</find>
       <find>prev</find>
-      <find>console.log</find>
       <find>number</find>
       <find>chapter-item</find>
       <find>click</find>
       <find>content</find>
       <find>getDatagetData</find>
       <find>formatDateString</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -309,12 +302,12 @@
       <workItem from="1513328366454" duration="4311000" />
       <workItem from="1513605680240" duration="846000" />
       <workItem from="1513681046307" duration="812000" />
-      <workItem from="1513929876490" duration="8680000" />
+      <workItem from="1513929876490" duration="8726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107793000" />
+    <option name="totallyTimeSpent" value="107839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -547,10 +540,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+        <state relative-caret-position="251">
+          <caret line="94" column="23" lean-forward="false" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="23" />
           <folding>
-            <marker date="1513942741266" expanded="true" signature="7402:7408" ph=" " />
+            <marker date="1513942873703" expanded="true" signature="7333:7339" ph=" " />
           </folding>
         </state>
       </provider>
