@@ -517,3 +517,17 @@ h1 {
 .seasonal {
   background-color: #3C4050;
   margin-left: 10px; }
+
+.loading {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  padding: 10px;
+  margin: 15px; }
+
+.date-time-picker {
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 10px; }
+  .date-time-picker p {
+    color: #555; }

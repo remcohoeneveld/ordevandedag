@@ -5,7 +5,7 @@ var borderChartColor = 'rgb(52, 59, 86)';
 var from = 0;
 
 $.ajax({
-    url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=15",
+    url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=10",
     success: function (json) {
         if (json !== null) {
             for (hits in json['hits']['hits']) {
@@ -22,11 +22,11 @@ $.ajax({
                 // creating the detail page for the content [views long]
                 getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
                 // searching an article
-                searchArticle(hits);
+                searchArticle(json['hits']['hits'][hits]['_source'], hits);
                 //show only the seasonal items
-                showSeasonal(json['hits']['hits'][hits]['_source']);
+                showSeasonal(json['hits']['hits'][hits]['_source'],hits);
                 //show all the items
-                showAll(json['hits']['hits'][hits]['_source']);
+                showAll(json['hits']['hits'][hits]['_source'],hits);
                 // hiding the sidebar
                 hideSidebar();
                 //sortArticles();
@@ -49,18 +49,18 @@ function appendJsonToContent(item, number) {
     }
     var articleContainer = $("#" + item['page_id']);
 
-    articleContainer.append("<div class=\"front\" id=" + "first" + number + "></div>");
-    articleContainer.append("<div class=\"back\" id=" + "second" + number + "></div>");
-    articleContainer.append("<div class=\"side\" id=" + "fourth" + number + "></div>");
-    articleContainer.append("<div class=\"back\" id=" + "third" + number + "></div>");
+    articleContainer.append("<div class=\"front\" id=" + "first" + item['page_id'] + "></div>");
+    articleContainer.append("<div class=\"back\" id=" + "second" + item['page_id'] + "></div>");
+    articleContainer.append("<div class=\"side\" id=" + "fourth" + item['page_id'] + "></div>");
+    articleContainer.append("<div class=\"back\" id=" + "third" + item['page_id'] + "></div>");
 
-    var articleContent = $("#first" + number);
-    var articleContentSecond = $("#second" + number);
-    var articleContentThird = $("#third" + number);
-    var articleContentFourth = $("#fourth" + number);
+    var articleContent = $("#first" + item['page_id']);
+    var articleContentSecond = $("#second" + item['page_id']);
+    var articleContentThird = $("#third" + item['page_id']);
+    var articleContentFourth = $("#fourth" + item['page_id']);
 
-    articleContent.append("<button type=\"button\" class=\"btn btn-primary right\" id='details" + number + "'><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></button>");
-    articleContentSecond.append("<button type=\"button\" class=\"btn btn-primary right\" id='prev" + number + "'><i class=\"fa fa-minus-square-o\" aria-hidden=\"true\"></i></button>");
+    articleContent.append("<button type=\"button\" class=\"btn btn-primary right\" id='details" + item['page_id'] + "'><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></button>");
+    articleContentSecond.append("<button type=\"button\" class=\"btn btn-primary right\" id='prev" + item['page_id'] + "'><i class=\"fa fa-minus-square-o\" aria-hidden=\"true\"></i></button>");
 
     articleContentSecond.hide();
     articleContentThird.hide();
@@ -76,7 +76,7 @@ function appendJsonToContent(item, number) {
     articleContent.append("<a href=https://nl.wikipedia.org/wiki/" + item['title'] + "><button type=\"button\" class=\"btn btn-secondary\" id='link" + number + "'>View on wikipedia</button></a>");
 
 
-    $('#details' + number).click(function () {
+    $('#details' + item['page_id']).click(function () {
         articleContainer.toggleClass('flipped');
 
         articleContent.fadeToggle("slow");
@@ -88,7 +88,7 @@ function appendJsonToContent(item, number) {
 
     });
 
-    $('#prev' + number).click(function () {
+    $('#prev' + item['page_id']).click(function () {
         articleContainer.toggleClass('flipped');
 
         articleContent.fadeToggle(1000);
@@ -124,7 +124,7 @@ function appendJsonToMenu(item, number) {
 }
 
 
-function scrollActiveMenu(item) {
+function scrollActiveMenu(item, number) {
     $(window).on('scroll', function () {
         $("#" + item['page_id']).each(function () {
             var menuItem = $("#menu-" + item['page_id']);
@@ -154,7 +154,7 @@ function getDetailJson(item, number) {
         data: {action: 'query', titles: item['title'], format: 'json', prop: 'pageviews', rvprop: 'content'},
         dataType: 'jsonp',
         success: function (x) {
-            var articleContent = $("#second" + number);
+            var articleContent = $("#second" + item['page_id']);
             if (x !== null) {
                 jsonData = x.query.pages[item['page_id']];
                 articleContent.append("<h1 class=\"article-head\">" + jsonData.title + "</h1>");
@@ -201,7 +201,7 @@ function getDetailJsonExtra(item, number) {
         data: {action: 'query', titles: item['title'], format: 'json', prop: 'contributors', rvprop: 'content'},
         dataType: 'jsonp',
         success: function (x) {
-            var articleContent = $("#third" + number);
+            var articleContent = $("#third" + item['page_id']);
             if (x !== null) {
                 jsonData = x.query.pages[item['page_id']];
                 articleContent.append("<div class='aspect-ratio'><canvas id=articlecontributors-" + jsonData.pageid + "></canvas></div>");
@@ -244,7 +244,7 @@ function getDetailJsonDay(item, number) {
     $.ajax({
         url: item['view_url'],
         success: function (x) {
-            var articleContent = $("#fourth" + number);
+            var articleContent = $("#fourth" + item['page_id']);
             if (x !== null) {
                 jsonData = x.items;
                 var views = [];
@@ -261,7 +261,7 @@ function getDetailJsonDay(item, number) {
                     labels.push(date);
                 }
                 articleContent.append("<div class='aspect-ratio'><canvas id=articleviews-" + item['page_id'] + "></canvas></div>");
-                articleContent.append("<a href=" + item['view_url'] + "><button type=\"button\" class=\"btn btn-secondary content-center btn-lg\" id='link" + number + "'>View the data</button></a>");
+                articleContent.append("<a href=" + item['view_url'] + "><button type=\"button\" class=\"btn btn-secondary content-center btn-lg\" id='link" + item['page_id'] + "'>View the data</button></a>");
                 var pagechartname = item['clean_title'] + " detailed views";
 
                 new Chart($("#articleviews-" + item['page_id'])[0].getContext('2d'), {
@@ -304,7 +304,7 @@ $window.scroll(function () {
 });
 
 
-function showSeasonal(item) {
+function showSeasonal(item, number) {
     $('#seasonal').click(function () {
         var articleContainer = $("#" + item['page_id']);
         var menuContainer = $("#menu-" + item['page_id']);
@@ -320,7 +320,7 @@ function showSeasonal(item) {
 
 
 
-function showAll(item) {
+function showAll(item, number) {
     $('#all').click(function () {
         var articleContainer = $("#" + item['page_id']);
         if (!articleContainer.hasClass('season')) {
@@ -333,10 +333,10 @@ function showAll(item) {
     });
 }
 
-function searchArticle(number) {
+function searchArticle(item, number) {
     $("#searchItems").keyup(function () {
         var input = this.value;
-        var div = $("#first" + number);
+        var div = $("#first" + item['page_id']);
         // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < div.length; i++) {
             var h1 = div[i].getElementsByTagName("h1")[0];
