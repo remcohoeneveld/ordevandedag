@@ -144,11 +144,6 @@ a:hover {
   color: #999999;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
-  background: none;
-}
-
 .btn-menu {
   float: right;
   position: fixed;
@@ -666,10 +661,16 @@ h1 {
       padding-top: 20px;
       p{
         color: white;
+        display: inline;
         input{
           border: none;
           padding: 10px;
           margin-left: 5px;
+          background: white;
+          color: black;
+          font-weight: bolder;
+          text-align: center;
+          margin-bottom: 10px;
         }
       }
     }
@@ -678,6 +679,10 @@ h1 {
       li{
         a{
           color: white;
+          &:hover{
+            border:solid 1px #343b56;
+            color: lightgrey;
+          }
         }
       }
     }
@@ -691,7 +696,11 @@ h1 {
 }
 
 .ui-widget.ui-widget-content {
-  border: solid 3px #343b56;
+  border: none;
+  padding: 5px;
+  background-color: #343b56;
+  color: white;
+  margin-left: -57px;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
@@ -705,7 +714,33 @@ h1 {
 
 .ui-datepicker-prev-hover, .ui-datepicker-next-hover{
   &:hover{
-    background-color: #343b56;
-    border: none;
+    background-color: #3C4050;
+    border:none;
+    margin-top: 1px;
+    margin-left: 1px;
+  }
+}
+
+.ui-datepicker-next-hover {
+  margin-right: 1px;
+}
+
+.calendar-icon{
+  display: inline-block;
+  i{
+  color: white;
+  margin-left: 15px;
+  font-size: 25px;
+  }
+}
+
+.error-message{
+  background: indianred !important;
+  h1{
+    color: #721c24 !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    padding: 100px;
   }
 }

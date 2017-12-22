@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="css/default.css"/>
     <link rel="stylesheet" type="text/css" href="css/bookblock.css"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -86,7 +87,12 @@
     <div class="row justify-content-center maincontent filters" id="filters">
         <div class="col-md-9">
             <div class="date-time-picker">
-                <p>Date: <input type="text" id="datepicker"> <input type="text" id="alternate" size="30"></p>
+                <p>Date:
+                    <input type="text" id="datepicker">
+                    <input type="text" id="alternate" size="30" disabled>
+                </p>
+                <div class="calendar-icon">
+                </div>
             </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -100,6 +106,12 @@
     </div>
     <div class="row justify-content-center maincontent">
         <div class="col-md-9 articles" id="list">
+            <div class="col-md-9">
+                <div class="alert alert-danger fade in alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                    <strong>Danger!</strong> This alert box indicates a dangerous or potentially negative action.
+                </div>
+            </div>
         </div>
     </div>
 </div>

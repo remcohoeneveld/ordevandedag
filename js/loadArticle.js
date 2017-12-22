@@ -4,6 +4,7 @@ var backgroundDarkChartColor = 'rgb(158, 161, 174)';
 var borderChartColor = 'rgb(52, 59, 86)';
 var from = 0;
 
+var filterContainer = $(".filters");
 //getting the datepicker container
 var datepickerContainer = $("#datepicker");
 //creating the current date
@@ -46,6 +47,7 @@ yesterday.setDate(yesterday.getDate() - 1);
 getData(yesterday);
 
 var string = "{query: {term: {date: 2017/12/19}}}";
+var calendarIconContainer = $('.calendar-icon');
 
 function getData(date) {
     var payload = {
@@ -88,7 +90,20 @@ function getData(date) {
                     hideSidebar();
                     //sortArticles();
                 }
+                if (json['hits']['hits'].length === 0) {
+                    calendarIconContainer.empty();
+                    $('.error-message').remove();
+                    filterContainer.append("<div class=\"col-md-9 error-message\">" +
+                        "<h1>NO WIKIPEDIA ARTICLES WHERE FOUND</h1>" +
+                        "</div>")
+                    calendarIconContainer.append("<i class=\"fa fa-calendar-times-o\" aria-hidden=\"true\"></i>")
+                } else {
+                    calendarIconContainer.empty();
+                    $('.error-message').remove();
+                    calendarIconContainer.append("<i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>")
+                }
             }
+
         },
         error: function () {
             console.log('not found')
@@ -190,14 +205,14 @@ function appendJsonToMenu(item, number) {
             "<div class=\"chapter-heading\">" +
             "<i class=\"fa fa-star\" aria-hidden=\"true\"></i>"
             + item['clean_title'] +
-            "</div>"+
+            "</div>" +
             "</a>");
     } else {
         menuItem.append(
             "<a href=\"#" + item['page_id'] + "\">" +
             "<div class=\"chapter-heading\">" +
             item['clean_title'] +
-            "</div>"+
+            "</div>" +
             "</a>");
     }
     menuItem.append("<div class=\"yellow-line\"></div>");
