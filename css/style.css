@@ -584,3 +584,27 @@ h1 {
     font-weight: bold;
     font-size: 50px;
     padding: 100px; }
+
+.slider-percentage {
+  display: inline-block; }
+  .slider-percentage form {
+    display: inline-block;
+    color: white;
+    margin-left: 10px; }
+    .slider-percentage form .rangeslider {
+      color: black; }
+    .slider-percentage form .rangeslider__fill {
+      background: #6b728d; }
+
+.rangeslider,
+input[type='range'] {
+  max-width: 500px; }
+
+.rangeslider__handle {
+  border-radius: 22px;
+  min-width: 62px;
+  line-height: 42px;
+  text-align: center; }
+
+.rangeslider__handle:after {
+  background: 0; }

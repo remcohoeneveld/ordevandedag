@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f9f2a43-3764-4427-b8ee-6ab8f16503eb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/rangeslider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/range.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loadArticle.js" afterPath="$PROJECT_DIR$/js/loadArticle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loadSorted.js" afterPath="$PROJECT_DIR$/js/loadSorted.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/style.scss" afterPath="$PROJECT_DIR$/sass/style.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sorted.html" afterPath="$PROJECT_DIR$/sorted.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,23 +19,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="sorted.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sorted.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="104" column="40" lean-forward="false" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="range.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/range.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="loadSorted.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/loadSorted.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+            <state relative-caret-position="638">
+              <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
               <folding>
-                <marker date="1517238933649" expanded="true" signature="5268:5290" ph="..." />
+                <marker date="1517245974699" expanded="true" signature="5989:6011" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sorted.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sorted.html">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sass/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="110" column="57" lean-forward="true" selection-start-line="110" selection-start-column="57" selection-end-line="110" selection-end-column="57" />
+            <state relative-caret-position="539">
+              <caret line="763" column="16" lean-forward="false" selection-start-line="763" selection-start-column="16" selection-end-line="763" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -51,12 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.log</find>
-      <find>a href</find>
-      <find>content</find>
-      <find>chapter-item</find>
-      <find>futura</find>
-      <find>yellow-line</find>
       <find>.chapter-heading</find>
       <find>chapter-heading</find>
       <find>smoothscroll</find>
@@ -81,6 +97,12 @@
       <find>from</find>
       <find>size</find>
       <find>loadLess</find>
+      <find>range slide</find>
+      <find>string</find>
+      <find>date</find>
+      <find>getData</find>
+      <find>range</find>
+      <find>min</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -120,11 +142,14 @@
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/datepicker.js" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/sass/style.scss" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/loadArticle.js" />
-        <option value="$PROJECT_DIR$/js/loadSorted.js" />
+        <option value="$PROJECT_DIR$/js/rangeslideroptions.js" />
+        <option value="$PROJECT_DIR$/sass/slider.scss" />
+        <option value="$PROJECT_DIR$/js/range.js" />
         <option value="$PROJECT_DIR$/sorted.html" />
+        <option value="$PROJECT_DIR$/sass/style.scss" />
+        <option value="$PROJECT_DIR$/js/loadSorted.js" />
       </list>
     </option>
   </component>
@@ -145,10 +170,11 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="22" />
-    <option name="width" value="1680" />
-    <option name="height" value="979" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="494" />
+    <option name="y" value="272" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -195,6 +221,11 @@
               <item name="ordevandedag" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="ordevandedag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ordevandedag" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -211,18 +242,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\rangeslider" />
+      <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\js" />
       <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\css" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\Remco\scotch-box\www\ordevandedag\js" />
       <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$/fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,15 +305,15 @@
       <workItem from="1513929876490" duration="12643000" />
       <workItem from="1513957710582" duration="4672000" />
       <workItem from="1513977040158" duration="889000" />
-      <workItem from="1517236076740" duration="2950000" />
+      <workItem from="1517236076740" duration="9168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120267000" />
+    <option name="totallyTimeSpent" value="126485000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29424307" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -322,20 +353,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/20073de8-56dd-4e4c-9434-5097c3f2fd28.svg" />
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/8741fba4-5847-45da-858a-a70d6208f327.svg" />
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/1301d16e-d0ec-407b-9796-677535450691.svg" />
-    <entry file="file://$PROJECT_DIR$/www.sbs.com.au/aviolentact/fonts/48d599a6-92b5-4d43-a4ac-8959f6971853.svg" />
-    <entry file="file://$PROJECT_DIR$/fonts/b5a8bf3f-37f2-43c3-ac26-fb03e47642a8.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19157">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createArticles.php" />
-    <entry file="file://$PROJECT_DIR$/js/createArticles.js" />
-    <entry file="file://$PROJECT_DIR$/ajax_info.html" />
     <entry file="file://$PROJECT_DIR$/ajax_info.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -474,14 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="671" column="29" lean-forward="false" selection-start-line="671" selection-start-column="29" selection-end-line="671" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/loadArticle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -494,20 +503,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/rangeslider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rangeslideroptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rangeinput">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/slider.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="89" column="3" lean-forward="true" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rangeslider/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rangeslider/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rangeslider/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="763" column="16" lean-forward="false" selection-start-line="763" selection-start-column="16" selection-end-line="763" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/range.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sorted.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="110" column="57" lean-forward="true" selection-start-line="110" selection-start-column="57" selection-end-line="110" selection-end-column="57" />
+        <state relative-caret-position="1156">
+          <caret line="104" column="40" lean-forward="false" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loadSorted.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+        <state relative-caret-position="638">
+          <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
           <folding>
-            <marker date="1517238933649" expanded="true" signature="5268:5290" ph="..." />
+            <marker date="1517245974699" expanded="true" signature="5989:6011" ph="..." />
           </folding>
         </state>
       </provider>

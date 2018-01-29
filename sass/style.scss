@@ -3,7 +3,6 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
-
 @font-face {
   font-family: AmericanTypewriter;
   src: url(../fonts/AmericanTypewriterRegular.ttf);
@@ -211,7 +210,7 @@ a:hover {
   .heading-wrap, .sub-menu-wrap, .credit-but, .story-by-wrap {
     margin-left: 2vw;
   }
-  .heading-wrap{
+  .heading-wrap {
     padding: 5px;
   }
   .sub-menu-wrap {
@@ -635,34 +634,34 @@ h1 {
   display: block;
 }
 
-.right{
+.right {
   float: right;
 }
 
-.seasonal{
+.seasonal {
   background-color: #3C4050;
   margin-left: 10px;
 }
 
-.loading{
-  width:   30px ;
-  height:  30px ;
-  display: inline-block ;
-  padding: 10px ;
+.loading {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  padding: 10px;
   margin: 15px;
 }
 
-.filters{
-  .col-md-9{
+.filters {
+  .col-md-9 {
     background-color: #343b56;
-    .date-time-picker{
+    .date-time-picker {
       display: inline-block;
       padding-left: 10px;
       padding-top: 20px;
-      p{
+      p {
         color: white;
         display: inline;
-        input{
+        input {
           border: none;
           padding: 10px;
           margin-left: 5px;
@@ -674,13 +673,13 @@ h1 {
         }
       }
     }
-    ul{
-      border-bottom:0;
-      li{
-        a{
+    ul {
+      border-bottom: 0;
+      li {
+        a {
           color: white;
-          &:hover{
-            border:solid 1px #343b56;
+          &:hover {
+            border: solid 1px #343b56;
             color: lightgrey;
           }
         }
@@ -689,9 +688,9 @@ h1 {
   }
 }
 
-.ui-widget-header{
+.ui-widget-header {
   border: none;
-  background:#343b56 ;
+  background: #343b56;
   color: white;
 }
 
@@ -703,19 +702,19 @@ h1 {
   margin-left: -57px;
 }
 
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
   border: 1px solid #3C4050;
   background: #343b56;
 }
 
-.ui-widget-header .ui-icon{
+.ui-widget-header .ui-icon {
   background-image: url(../images/ui-icons.png);
 }
 
-.ui-datepicker-prev-hover, .ui-datepicker-next-hover{
-  &:hover{
+.ui-datepicker-prev-hover, .ui-datepicker-next-hover {
+  &:hover {
     background-color: #3C4050;
-    border:none;
+    border: none;
     margin-top: 1px;
     margin-left: 1px;
   }
@@ -725,22 +724,53 @@ h1 {
   margin-right: 1px;
 }
 
-.calendar-icon{
+.calendar-icon {
   display: inline-block;
-  i{
-  color: white;
-  margin-left: 15px;
-  font-size: 25px;
+  i {
+    color: white;
+    margin-left: 15px;
+    font-size: 25px;
   }
 }
 
-.error-message{
+.error-message {
   background: indianred !important;
-  h1{
+  h1 {
     color: #721c24 !important;
     text-align: center;
     font-weight: bold;
     font-size: 50px;
     padding: 100px;
   }
+}
+
+.slider-percentage {
+  display: inline-block;
+  form {
+    display: inline-block;
+    color: white;
+    margin-left: 10px;
+    .rangeslider {
+      color: black;
+    }
+    .rangeslider__fill {
+      background: #6b728d;
+    }
+  }
+}
+
+.rangeslider,
+input[type='range'] {
+  max-width: 500px;
+}
+
+.rangeslider__handle {
+  border-radius: 22px;
+  min-width: 62px;
+  line-height: 42px;
+  text-align: center;
+}
+
+.rangeslider__handle:after {
+  background: 0;
 }
