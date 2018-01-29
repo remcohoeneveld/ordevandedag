@@ -10,9 +10,12 @@
     <title>Wikipedia popular events</title>
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/default.css"/>
     <link rel="stylesheet" type="text/css" href="css/bookblock.css"/>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -25,7 +28,6 @@
 </div>
 
 <div id="wrapper">
-
     <nav class="navbar navbar-expand-md">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
@@ -78,19 +80,34 @@
             <img class="yellow-src" src="images/yellow-bg-large.png">
         </div>
     </div>
-    <div class="row justify-content-center maincontent">
-        <div class="col-md-9 totop articles" id="list">
+    <div class="row justify-content-center maincontent filters" id="filters">
+        <div class="col-md-9">
+            <div class="date-time-picker">
+                <p>Date:
+                    <input type="text" id="datepicker">
+                    <input type="text" id="alternate" size="30" disabled>
+                </p>
+                <div class="calendar-icon">
+                </div>
+            </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" id="all" href="#">All</a>
+                    <a class="nav-link" id="all" href="#filters">All</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="seasonal" href="#">Seasonal</a>
+                    <a class="nav-link" id="seasonal" href="#filters">Seasonal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="loadMore" href="#">Load more items</a>
+                    <a class="nav-link" id="loadMore" href="#filters">Load More Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="loadLess" href="#filters">Load Less Items</a>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div class="row justify-content-center maincontent">
+        <div class="col-md-9 articles" id="list">
             <img class='loading' src="images/loader.gif" alt="blankimage">
         </div>
     </div>
@@ -99,9 +116,10 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="js/jquery.visible.js"></script>
 <script src="js/smooth-scroll.js"></script>
-<script src="js/loadSorted.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/loadSorted.js"></script>
 <script>
     var scroll = new SmoothScroll('a[href*="#"]');
 

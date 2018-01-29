@@ -3,78 +3,120 @@ var backgroundChartColor = 'rgb(246, 246, 247)';
 var backgroundDarkChartColor = 'rgb(158, 161, 174)';
 var borderChartColor = 'rgb(52, 59, 86)';
 var from = 0;
+var size = 5;
 var id = 5;
 
-$.ajax({
-    url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=" + id.toString(),
-    success: function (json) {
-        if (json !== null) {
-            for (hits in json['hits']['hits']) {
-                //creating all the content
-                appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
-                //creating the sidebar menu
-                getDetailJson(json['hits']['hits'][hits]['_source'], hits);
-                // creating the detail page for the content [contributors]
-                getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
-                // creating the detail page for the content [views long]
-                getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
-                // searching an article
-                searchArticle(json['hits']['hits'][hits]['_source'], hits);
-                //show only the seasonal items
-                showSeasonal(json['hits']['hits'][hits]['_source'], hits);
-                //show all the items
-                showAll(json['hits']['hits'][hits]['_source'], hits);
-                // hiding the sidebar
-                hideSidebar();
-                sortArticles();
-            }
+var filterContainer = $(".filters");
+//getting the datepicker container
+var datepickerContainer = $("#datepicker");
+//creating the current date
+var currentdate = new Date();
+
+//getting the date from the datepicker
+datepickerContainer.datepicker({
+    changeMonth: true,
+    changeYear: true,
+    altField: "#alternate",
+    altFormat: "DD, d MM, yy",
+    dateFormat: "yy-mm-dd",
+    yearRange: '2017:2020',
+    minDate: new Date(2017, 7, 1),
+    showWeek: true,
+    firstDay: 1,
+    maxDate: "-1",
+    onSelect: function (dateText, inst) {
+        //getting the date [String and Object]
+        var dateAsString = dateText; //the first parameter of this function
+        var dateAsObject = $(this).datepicker('getDate'); //the getDate method
+        //checking if the date is in the past and not the future
+        if (dateAsObject < currentdate) {
+            clearCanvas();
+            getData(id,dateAsObject);
         }
-    },
-    error: function () {
-        console.log('not found')
     }
 });
 
-function getAjax(id, from) {
+function formatDateString(MyDate) {
+    MyDateString = (MyDate.getFullYear() + '/' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/' + ('0' + MyDate.getDate()).slice(-2));
+    return MyDateString
+}
+
+datepickerContainer.datepicker('setDate', '-1');
+
+var yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+
+getData(id, yesterday);
+
+var string = "{query: {term: {date: 2017/12/19}}}";
+var calendarIconContainer = $('.calendar-icon');
+
+
+function getData(size,date) {
+    var payload = {
+        query: {
+            term: {
+                date: formatDateString(date)
+            }
+        }
+    };
+
     $.ajax({
-        url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=" + id.toString(),
+        url: "https://search-tyler-tfwyri4e6p6vpezxdwhwy2tj6e.eu-central-1.es.amazonaws.com/ordevandedag/document/_search?from=" + from.toString() + "&size=" + size.toString(),
+        type: 'POST',
+        dataType: "JSON",
+        data: JSON.stringify(payload),
+        processData: false,
+        contentType: false,
         success: function (json) {
             if (json !== null) {
                 for (hits in json['hits']['hits']) {
                     //creating all the content
                     appendJsonToContent(json['hits']['hits'][hits]['_source'], hits);
-                    //creating the sidebar menu
+                    // creating the detail page for the content [views short]
                     getDetailJson(json['hits']['hits'][hits]['_source'], hits);
                     // creating the detail page for the content [contributors]
                     getDetailJsonExtra(json['hits']['hits'][hits]['_source'], hits);
                     // creating the detail page for the content [views long]
                     getDetailJsonDay(json['hits']['hits'][hits]['_source'], hits);
                     // searching an article
-                    searchArticle(hits);
+                    searchArticle(json['hits']['hits'][hits]['_source'], hits);
                     //show only the seasonal items
-                    showSeasonal(json['hits']['hits'][hits]['_source']);
+                    showSeasonal(json['hits']['hits'][hits]['_source'], hits);
                     //show all the items
-                    showAll(json['hits']['hits'][hits]['_source']);
+                    showAll(json['hits']['hits'][hits]['_source'], hits);
                     // hiding the sidebar
                     hideSidebar();
+                    //sortArticles();
                     sortArticles();
                 }
+                if (json['hits']['hits'].length === 0) {
+                    calendarIconContainer.empty();
+                    $('.error-message').remove();
+                    filterContainer.append("<div class=\"col-md-9 error-message\">" +
+                        "<h1>NO WIKIPEDIA ARTICLES WHERE FOUND</h1>" +
+                        "</div>")
+                    calendarIconContainer.append("<i class=\"fa fa-calendar-times-o\" aria-hidden=\"true\"></i>")
+                } else {
+                    calendarIconContainer.empty();
+                    $('.error-message').remove();
+                    calendarIconContainer.append("<i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>")
+                }
             }
+
         },
         error: function () {
             console.log('not found')
         }
     });
+
 }
 
 function loadMore() {
-    newFrom = from + id;
-    getAjax(id, newFrom);
-    id++;
-    id++;
-    id++;
-    id++;
-    id++;
+    var dateAsObject = $("#datepicker").datepicker('getDate');
+    clearCanvas();
+    size = 15;
+    getData(size, dateAsObject);
 }
 
 $("#loadMore").on("click", function (e) {
@@ -89,6 +131,36 @@ $("#loadMore").on("click", function (e) {
         }
     });
 });
+
+function loadLess() {
+    var dateAsObject = $("#datepicker").datepicker('getDate');
+    clearCanvas();
+    size = 5;
+    getData(size, dateAsObject);
+}
+
+$("#loadLess").on("click", function (e) {
+    e.preventDefault();
+    loadLess();
+    $.ajax({
+        success: function (data) {
+            $(".loading").show();
+        },
+        error: function () {
+            $(".loading").hide();
+        }
+    });
+});
+function clearCanvas() {
+
+    var wrapperArticles = $(".articles");
+    var wrapperMenu = $("#menu-items-wrap");
+
+    wrapperArticles.empty();
+    wrapperMenu.empty();
+    wrapperMenu.append("<div id=\"menu-header\" class=\"menu-item\" style=\"align-self: flex-start\"><img id=\"small-logo-top-left\" src=\"images/logo-menu.png\" alt=\"logo\"></div>");
+
+}
 
 function appendJsonToContent(item, number) {
     var wrapper = $(".articles");

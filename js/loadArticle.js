@@ -88,7 +88,6 @@ function getData(date) {
                     showAll(json['hits']['hits'][hits]['_source'], hits);
                     // hiding the sidebar
                     hideSidebar();
-                    //sortArticles();
                 }
                 if (json['hits']['hits'].length === 0) {
                     calendarIconContainer.empty();
@@ -216,9 +215,6 @@ function appendJsonToMenu(item, number) {
             "</a>");
     }
     menuItem.append("<div class=\"yellow-line\"></div>");
-
-    var mobileListItem = $('.dropdown-menu');
-    mobileListItem.append("<li><a href=\"#" + item['page_id'] + "\">" + item['clean_title'] + "</a></li>");
 }
 
 
@@ -443,19 +439,5 @@ function searchArticle(item, number) {
                 div[i].style.display = "none";
             }
         }
-    });
-}
-
-function sortArticles() {
-    var div = $('#list');
-    var listitems = div.children('div.card').get();
-    listitems.sort(function (a, b) {
-        return (+$(a).attr('data-sort') > +$(b).attr('data-sort')) ?
-            -1 : (+$(a).attr('data-sort') < +$(b).attr('data-sort')) ?
-                1 : 0;
-    });
-
-    $.each(listitems, function (idx, itm) {
-        div.append(itm);
     });
 }
